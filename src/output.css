@@ -574,6 +574,14 @@ video {
   inset: 0px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .mx-0 {
   margin-left: 0px;
   margin-right: 0px;
@@ -800,6 +808,10 @@ video {
 
 .mt-96 {
   margin-top: 24rem;
+}
+
+.mb-9 {
+  margin-bottom: 2.25rem;
 }
 
 .block {
@@ -1334,17 +1346,41 @@ a:hover{
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
+  .tablet\:absolute {
+    position: absolute;
+  }
+
+  .tablet\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .tablet\:left-0 {
+    left: 0px;
+  }
+
   .tablet\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
   }
 
-  .tablet\:mb-72 {
-    margin-bottom: 18rem;
+  .tablet\:mb-96 {
+    margin-bottom: 24rem;
   }
 
   .tablet\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .tablet\:mb-9 {
+    margin-bottom: 2.25rem;
+  }
+
+  .tablet\:mb-80 {
+    margin-bottom: 20rem;
+  }
+
+  .tablet\:mb-72 {
+    margin-bottom: 18rem;
   }
 
   .tablet\:flex {
@@ -1376,11 +1412,6 @@ a:hover{
     padding-bottom: 1rem;
   }
 
-  .tablet\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
   .tablet\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -1388,6 +1419,18 @@ a:hover{
 }
 
 @media (min-width: 1000px) and (max-width: 1280px) {
+  .pc\:absolute {
+    position: absolute;
+  }
+
+  .pc\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .pc\:left-0 {
+    left: 0px;
+  }
+
   .pc\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
@@ -1403,6 +1446,10 @@ a:hover{
 
   .pc\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .pc\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .pc\:flex {
@@ -1448,9 +1495,26 @@ a:hover{
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .pc\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 1280px) and (max-width: 2500px) {
+  .tv\:absolute {
+    position: absolute;
+  }
+
+  .tv\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .tv\:left-0 {
+    left: 0px;
+  }
+
   .tv\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
