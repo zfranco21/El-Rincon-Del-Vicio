@@ -4,32 +4,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/input.css">
     <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     <title>El rincon del vicio</title>
 </head>
 <body class="text-white">
-    <!--DYLAN: Header, Navegacion-->
-    <header>
-        <nav class="w-full h-35 bg-black pb-4">
-            <img src="" alt="" srcset="">
-            <ul>
-                <a href="index.html"><li>INICIO</li></a>
-                <a href="juegos.html"><li>JUEGOS</li></a>
-                <a href="noticias.html"><li>NOTICIAS</li></a>
-                <a href="ayuda.html"><li>AYUDA</li></a>
-            </ul>
-            <div>
-                <button></button>
-                <button></button>
-            </div>
+    <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder"-->
+    <header class="bg-[#222831]">
+        <nav class="flex items-center justify-between pc:mx-20 pc:py-4 tv:mx-20 tablet:mx-20 tablet:py-4 tv:py-4 celu:mx-4 celu:py-4">
+                <div class="flex justify-center">
+                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logoProvisorio.png" alt="">
+                </div>
+                
+                <div>
+                    <ul class="flex celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                        <a href="index.html"><li><b>INICIO</b></li></a>
+                        <a href="juegos.html"><li><b>JUEGOS</b></li></a>
+                        <a href="noticias.html"><li><b>NOTICIAS</b></li></a>
+                        <a href="ayuda.html"><li><b>AYUDA</b></li></a>
+                    </ul>
+                    
+                </div>
+
+                <div class="flex celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
+                    <button class="bg-gray-500 px-1 pb-1 tv:mt-6"><b>Acceder</b></button>
+                </div>
         </nav>
     </header>
 
+    <div class="mt-10">
+        <h1 class="text-center text-xs tablet:text-xl pc:text-2xl tv:text-3xl fuente1">¡Bienvenido a tu Rincon Del Vicio!</h1>
+    </div>
 
-
-
-    
-    <!--FRANCO: Contenido Main-->
-    <main>
+    <!--Main: Falta enlazar el boton "Descargar" con el link de cada juego.-->
+    <main class="justify-evenly mx-10 mt-10 tablet:mt-20 tablet:flex tablet:mx-20 pc:mt-20 pc:flex pc:mb-72 pc:mx-20 tv:mx-20 tv:mt-48 tv:flex tablet:mb-72 tv:mb-96">
+        <div class="tablet:w-1/2 tv:pr-8 pc:pr-14">
+            <h1 class="mb-6 celu:text-3xl celu:text-center tablet:text-4xl pc:text-5xl tv:text-7xl text-[#00A3FF]"><b>Street Fighter 3</b></h1>
+            <p class="mb-8 celu:text-center pc:text-xl tv:text-2xl fuente1">Street Fighter Alpha 3 es un juego de lucha lanzado en 1998 <br> conocido por su jugabilidad rápida y frenética,<br> así como por su amplia selección de personajes. <br> Es uno de los mejores juegos de lucha de la era de los 32 bits.</p>
+            <div class="mt-14 pc:mt-16 celu:text-center">
+                <button class="bg-[#00A3FF] p-2 celu:mb-14"><b>DESCARGAR</b></button>
+            </div>
+        </div>
+        <div>
+        <div class="flex justify-center lg:pl-8 celu:mb-2">
+            <iframe class="border items-center w-full" height="315" src="https://www.youtube.com/embed/7b74IRV0vBg?si=xxuEC6DF0almOnto" title="Trailer del Juego." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div> 
+        <p class="text-center"><a href="https://youtu.be/7b74IRV0vBg?si=vKDEsmT5iLQk6RNO"><u>Ver Trailer</u></a></p>
+    </div>      
     </main>
+
+    <!--Footer: Falta agregar enlaces y modificar la información-->
+    <footer class="bg-[#222831] px-2 celu:text-xs text-center">
+        <div class="mt-20 mb-2 flex justify-evenly pt-2">
+            <a href=""><p>Website Regulations</p></a>
+            <a href=""><p>Website rules</p></a>
+            <a href=""><p>Privacy Policy</p></a>
+        </div>
+        <div class="pb-4">
+            <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
+        </div>
+    </footer>
 </body>
 </html>

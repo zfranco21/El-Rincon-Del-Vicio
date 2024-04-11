@@ -11,3 +11,13 @@ body {
 /*CODIGO DE DYLAN*/
 
 /*CODIGO DE DYLAN*/
+
+
+/*Fuente que usamos para los textos pequeños*/
+.Fuente1 {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+/*------------------------------------------*/
