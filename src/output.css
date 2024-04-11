@@ -706,6 +706,10 @@ video {
   margin-bottom: 20rem;
 }
 
+.mb-9 {
+  margin-bottom: 2.25rem;
+}
+
 .mb-96 {
   margin-bottom: 24rem;
 }
@@ -732,6 +736,18 @@ video {
 
 .mr-6 {
   margin-right: 1.5rem;
+}
+
+.mr-60 {
+  margin-right: 15rem;
+}
+
+.mr-80 {
+  margin-right: 20rem;
+}
+
+.mr-96 {
+  margin-right: 24rem;
 }
 
 .mt-10 {
@@ -808,10 +824,6 @@ video {
 
 .mt-96 {
   margin-top: 24rem;
-}
-
-.mb-9 {
-  margin-bottom: 2.25rem;
 }
 
 .block {
@@ -1008,6 +1020,11 @@ video {
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.bg-orange-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 .bg-orange-500 {
@@ -1295,11 +1312,16 @@ body {
 
 a:hover{
   transform: scale(1.1);
+  color: orange;
 }
 
 /*Funciona en el header*/
 
 /*---------------------------------------------*/
+
+.btnOrange:hover{
+  background-color: orange;
+}
 
 @media (min-width: 100px) and (max-width: 640px) {
   .celu\:mx-4 {
@@ -1371,18 +1393,6 @@ a:hover{
     margin-top: 5rem;
   }
 
-  .tablet\:mb-9 {
-    margin-bottom: 2.25rem;
-  }
-
-  .tablet\:mb-80 {
-    margin-bottom: 20rem;
-  }
-
-  .tablet\:mb-72 {
-    margin-bottom: 18rem;
-  }
-
   .tablet\:flex {
     display: flex;
   }
@@ -1440,16 +1450,8 @@ a:hover{
     margin-bottom: 18rem;
   }
 
-  .pc\:mt-16 {
-    margin-top: 4rem;
-  }
-
   .pc\:mt-20 {
     margin-top: 5rem;
-  }
-
-  .pc\:mt-10 {
-    margin-top: 2.5rem;
   }
 
   .pc\:flex {
@@ -1494,11 +1496,6 @@ a:hover{
   .pc\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .pc\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }
 

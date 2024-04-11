@@ -42,5 +42,10 @@ body {
 /*Efecto zoom cuando pasas el mouse por un link*/
 a:hover{
   transform: scale(1.1);
+  color: orange;
 } /*Funciona en el header*/
 /*---------------------------------------------*/
+
+.btnOrange:hover{
+  background-color: orange;
+}
