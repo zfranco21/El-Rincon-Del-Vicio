@@ -1024,6 +1024,11 @@ video {
   padding: 1rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1037,6 +1042,11 @@ video {
 .px-20 {
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-10 {
@@ -1064,13 +1074,7 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
+.pb-1 {
   padding-bottom: 0.25rem;
 }
 
@@ -1146,10 +1150,6 @@ video {
   padding-top: 1.5rem;
 }
 
-.pb-1 {
-  padding-bottom: 0.25rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -1193,6 +1193,11 @@ video {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1206,11 +1211,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-\[\#00A3FF\] {
@@ -1254,14 +1254,40 @@ body {
 
 /*Fuente que usamos para los textos pequeños*/
 
-.Fuente1 {
+.fuente1 {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 }
 
+/*Fuente rara, usar poco*/
+
+.fuente2 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Fuente que usamos para los textos grandes*/
+
+.fuente3{
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /*------------------------------------------*/
+
+/*Efecto zoom cuando pasas el mouse por un link*/
+
+a:hover{
+  transform: scale(1.1);
+}
+
+/*Funciona en el header*/
+
+/*---------------------------------------------*/
 
 @media (min-width: 100px) and (max-width: 640px) {
   .celu\:mx-4 {
@@ -1485,8 +1511,8 @@ body {
     line-height: 2.25rem;
   }
 
-  .tv\:text-7xl {
-    font-size: 4.5rem;
+  .tv\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 

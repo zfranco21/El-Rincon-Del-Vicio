@@ -14,10 +14,33 @@ body {
 
 
 /*Fuente que usamos para los textos pequeños*/
-.Fuente1 {
+.fuente1 {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 }
+
+/*Fuente rara, usar poco*/
+.fuente2 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Fuente que usamos para los textos grandes*/
+.fuente3{
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
 /*------------------------------------------*/
+
+
+
+
+/*Efecto zoom cuando pasas el mouse por un link*/
+a:hover{
+  transform: scale(1.1);
+} /*Funciona en el header*/
+/*---------------------------------------------*/
