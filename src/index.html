@@ -14,13 +14,13 @@
 <body class="text-white">
     <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder"-->
     <header class="bg-[#222831]">
-        <nav class="flex items-center justify-between pc:mx-20 pc:py-4 tv:mx-20 tablet:mx-20 tablet:py-4 tv:py-4 celu:mx-4 celu:py-4">
+        <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
                 <div class="flex justify-center">
                     <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logoProvisorio.png" alt="El Rincon Del Vicio">
                 </div>
                 
                 <div>
-                    <ul class="flex celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                    <ul class="tablet:flex pc:flex tv:flex celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
                         <a href="index.html"><li><b>INICIO</b></li></a>
                         <a href="juegos.html"><li><b>JUEGOS</b></li></a>
                         <a href="noticias.html"><li><b>NOTICIAS</b></li></a>
@@ -29,7 +29,7 @@
                     
                 </div>
 
-                <div class="flex celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
+                <div class="tablet:flex  pc:flex tv:flex celu:text-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
                     <button class="bg-gray-500 px-1 pb-1 tv:mt-6 btnOrange"><b>Acceder</b></button>
                 </div>
         </nav>
@@ -40,8 +40,8 @@
     </div>
 
     <!--Main: Falta enlazar el boton "Descargar" con el link de cada juego.-->
-    <main class="justify-evenly mx-10 mt-10 tablet:mt-20 tablet:flex tablet:mx-20 pc:mt-20 pc:flex pc:mb-72 pc:mx-20 tv:mx-20 tv:mt-48 tv:flex tablet:mb-96 tv:mb-96">
-        <div class="relative tablet:w-1/2 tv:pr-8 pc:pr-14">
+    <main class="justify-evenly mx-10 mt-10 tablet:mt-20 tablet:flex tablet:mx-20 pc:mt-20 pc:flex pc:mb-72 pc:mx-20 tv:mx-20 tv:mt-20 tv:flex tablet:mb-96 tv:mb-72">
+        <div class="relative tablet:w-1/2 pc:pr-14 tv:pr-96">
             <h1 id="sliderTitulo" class="mb-6 celu:text-3xl celu:text-center tablet:text-xl pc:text-5xl tv:text-6xl text-[#00A3FF] fuente3"><b>Street Fighter 3</b></h1>
             <p id="sliderTexto" class="mb-8 celu:text-center pc:text-xl tv:text-2xl fuente1">Street Fighter Alpha 3 es un juego de lucha lanzado en 1998 <br> conocido por su jugabilidad rápida y frenética,<br> así como por su amplia selección de personajes. <br> Es uno de los mejores juegos de lucha de la era de los 32 bits.</p>
             <div class="pc:absolute pc:bottom-0 pc:left-0 tablet:absolute tablet:bottom-0 tablet:left-0 tv:absolute tv:bottom-0 tv:left-0  celu:text-center">
@@ -50,9 +50,9 @@
         </div>
         <div>
         <div class="flex justify-center lg:pl-8 celu:mb-2">
-            <iframe class="border items-center w-full" height="315" src="https://www.youtube.com/embed/7b74IRV0vBg?si=xxuEC6DF0almOnto" title="Trailer del Juego." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="videoFrame" class="border items-center" height="315" src="https://www.youtube.com/embed/7b74IRV0vBg?si=XH0-ZKYbnZ0-7gcF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div> 
-        <p id="sliderVideo" class="text-center text-xl fuente2 mt-2"><a href="https://youtu.be/7b74IRV0vBg?si=vKDEsmT5iLQk6RNO"><u>Ver Trailer</u></a></p>
+        <p id="trailer" class="text-center text-xl fuente2 mt-2"><a href="https://www.youtube.com/watch?v=7b74IRV0vBg&t=1055s"><u>Ver Trailer</u></a></p>
     </div>      
     </main>
     
@@ -67,5 +67,7 @@
             <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
         </div>
     </footer>
+
+    <script src="Funciones js/rotacionMain.js"></script>
 </body>
 </html>
