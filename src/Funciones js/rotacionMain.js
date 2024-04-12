@@ -20,7 +20,7 @@ const inicio = [
     { 
         video: "https://www.youtube.com/embed/A4OuWAvDLBo?si=J9Pyzu9ov1D7mPx7",
         sliderTitulo: "Medal Of Honor",
-        sliderTexto: "Esta saga se centra en ofrecer al jugador videojuegos de disparos de corte bélico que habitualmente están ambientados durante la Segunda Guerra Mundia.",
+        sliderTexto: "Esta saga se centra en ofrecer al jugador videojuegos de disparos de corte bélico que habitualmente están ambientados durante la Segunda Guerra Mundial.",
         trailer: "https://www.youtube.com/watch?v=A4OuWAvDLBo",
     }
 ];
