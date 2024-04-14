@@ -41,7 +41,7 @@ function cambiar() {
     currentIndex = (currentIndex + 1) % inicio.length;
 }
 
-//usamos setInterval que es un metodo de bucle cada cierto tiempo
+//use setInterval que es un metodo de bucle cada cierto tiempo
 //como tenemos un array, va a ir pasando de un elemento a otro cada 7 segundos, y luego se reinicia el bucle.
 setInterval(cambiar, 7000);
 window.onload = cambiar;
