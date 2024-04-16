@@ -37,20 +37,55 @@
 
 <!--Hay que crear la seccion main, en esta pagina tendrian que estar las preguntas frecuentes, tutoriales, ayuda para los usuarios-->
     <main>
+        <h1 class="text-center text-2xl my-6 fuente3 text-orange-400 mt-16 mb-16">Soporte Tecnico</h1>
+        <div class="pc:mx-20 tablet:mx-20 tv:mx-20 celu:mx-4">
+        <h2 class="text-xl mb-2">● Preguntas Frecuentes (FAQ):</h2>
+        <div class="text-sm">
+            <a href="">¿Cuáles son los requisitos mínimos del sistema para ejecutar los emuladores? </a><br><br>
+            <a href="">¿Cómo configuro un controlador para jugar en el emulador?</a><br><br>
+            <a href="">¿Cuánto espacio en disco se requiere para descargar un juego de PS1?</a><br><br>
+            <a href="">¿Cómo puedo cambiar mi contraseña de la cuenta en la página web?</a>
+        </div>
+        <h2 class="text-left text-1xl my-6 fuente3 text-white mt-10 mb-10">Configuración Estandar de PCSXR</h2>
+        <div class="mb-10 tablet:flex pc:flex tv:flex tablet:space-x-10 pc:space-x-10 tv:space-x-10">
+            <img class="border" width="50%" src="img/configEmulador.png" alt=""><br>
+            <img class="border" width="50%" src="img/joystickConfig.png" alt="">
+        </div>
+
+        <h2 class="text-xl mb-2">● Politica y condiciones:</h2>
+        <a href="">https://www.politicaycondicionesdeusuario.com</a><br><br>
+
+        <h2 class="text-xl mb-2">● Términos y Condiciones:</h2>
+        <a href=""> https://www.politicaycondicionesdeusuario.com</a><br><br>
+
+        <h2 class="text-xl mb-2">● Formulario de contacto o soporte técnico:</h2>
+        <div class="mt-10">
+            <form action="POST"">
+                <label for="descripcion"></label>
+                <textarea name="descripcion" id="descripcion" class="px-1 text-black" placeholder="Describa Su Problema..." cols="32" rows="3"></textarea><br><br>
+                <label for="name"><b>Nombre&#160;</b></label>
+                <input type="text" name="name" id="name" class="px-1 text-black" placeholder="Ingrese su nombre" required >
+                <br><br>
     
+                <label for="email"><b>Correo@</b></label>
+                <input type="text" name="email" id="email" class="px-1 text-black" placeholder="Ingrese su correo" required>                    
+                <br><br>
+
+                <input class="border p-1 bg-gray-500" type="button" value="Enviar" onclick="validarContrasena(),validarEmail()">
+            </form>
+        </div>
+        </div>
     </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <footer class="bg-[#222831] px-2 celu:text-xs text-center">
+        <div class="mt-20 mb-2 flex justify-evenly pt-2">
+            <a href=""><p>Website Regulations</p></a>
+            <a href=""><p>Website rules</p></a>
+            <a href=""><p>Privacy Policy</p></a>
+        </div>
+        <div class="pb-4">
+            <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
+        </div>
+    </footer>
 </body>
 </html>

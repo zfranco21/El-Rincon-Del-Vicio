@@ -8,13 +8,13 @@ const inicio = [
     { 
         video: "https://www.youtube.com/embed/7b74IRV0vBg?si=xxuEC6DF0almOnto",
         sliderTitulo: "Street Fighter 3",
-        sliderTexto: "Street Fighter Alpha 3 es un juego de lucha lanzado en 1998 conocido por su jugabilidad rápida y frenética, así como por su amplia selección de personajes. Es uno de los mejores juegos de lucha de la era de los 32 bits.",
+        sliderTexto: "Street Fighter Alpha 3 es un juego de lucha lanzado en 1998 de jugabilidad rápida y frenética, con una amplia selección de personajes. Es de los mejores juegos de lucha de la era de los 32 bits.",
         trailer: "https://www.youtube.com/watch?v=7b74IRV0vBg&t=1055s",
     },
     { 
         video: "https://www.youtube.com/embed/UZNOI3VTWBk?si=wTx2pRakdWUBYKWg",
         sliderTitulo: "Metal Gear Solid",
-        sliderTexto: "Metal Gear Solid es un videojuego de acción-aventura y sigilo desarrollado por Konami Computer Entertainment. Lanzado originalmente para la PlayStation en 1998, se convirtió en uno de los títulos más influyentes de su generación.",
+        sliderTexto: "Metal Gear Solid es un videojuego de acción-aventura y sigilo desarrollado por Konami. Lanzado originalmente para la PlayStation en 1998, es uno de los títulos más influyentes de su generación.",
         trailer: "https://www.youtube.com/watch?v=UZNOI3VTWBk&t=1s",
     },
     { 

@@ -1198,6 +1198,11 @@ video {
   width: auto;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1238,6 +1243,14 @@ video {
 
 .scroll-mt-96 {
   scroll-margin-top: 24rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -1462,6 +1475,16 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
+.bg-cyan-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
+}
+
+.bg-cyan-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
+}
+
 .bg-cyan-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 116 144 / var(--tw-bg-opacity));
@@ -1490,16 +1513,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
-}
-
-.bg-cyan-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
 .p-0 {
@@ -1690,6 +1703,10 @@ video {
   padding-top: 2rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1866,6 +1883,44 @@ a:hover{
   background-color: orange;
 }
 
+/* Estilos del modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  /* Asegura que el modal esté por delante de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo semi-transparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (min-width: 100px) and (max-width: 640px) {
   .celu\:mx-4 {
     margin-left: 1rem;
@@ -1962,6 +2017,12 @@ a:hover{
     width: 2.5rem;
   }
 
+  .tablet\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .tablet\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -2022,6 +2083,12 @@ a:hover{
 
   .pc\:w-12 {
     width: 3rem;
+  }
+
+  .pc\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .pc\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -2106,6 +2173,12 @@ a:hover{
 
   .tv\:w-14 {
     width: 3.5rem;
+  }
+
+  .tv\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .tv\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
