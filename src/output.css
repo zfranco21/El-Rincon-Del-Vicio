@@ -1870,7 +1870,7 @@ body {
 
 /*Efecto zoom cuando pasas el mouse por un link*/
 
-a:hover{
+.animacionZoom:hover{
   transform: scale(1.1);
   color: orange;
 }
