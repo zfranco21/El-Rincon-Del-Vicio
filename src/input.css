@@ -51,3 +51,18 @@ body {
 .btnOrange:hover{
   background-color: orange;
 }
+
+
+/*estilos para Preguntas y respuestas en la seccion ayuda*/
+.faq .respuesta {
+  display: none;
+}
+
+.faq .pregunta h2 {
+  cursor: pointer;
+}
+
+.faq .pregunta.active .respuesta {
+  display: block;
+}
+

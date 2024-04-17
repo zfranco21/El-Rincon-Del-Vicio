@@ -1839,6 +1839,10 @@ body {
 
 /*CODIGO DE DYLAN*/
 
+.animacionJuegos:hover{
+  opacity: 0.5;
+}
+
 /*CODIGO DE DYLAN*/
 
 /*Fuente que usamos para los textos pequeños*/
@@ -1881,6 +1885,20 @@ body {
 
 .btnOrange:hover{
   background-color: orange;
+}
+
+/*estilos para Preguntas y respuestas en la seccion ayuda*/
+
+.faq .respuesta {
+  display: none;
+}
+
+.faq .pregunta h2 {
+  cursor: pointer;
+}
+
+.faq .pregunta.active .respuesta {
+  display: block;
 }
 
 @media (min-width: 100px) and (max-width: 640px) {
@@ -2184,3 +2202,4 @@ body {
     line-height: 1.75rem;
   }
 }
+
