@@ -7,6 +7,9 @@ body {
     background: rgb(0,58,130);
     background: linear-gradient(0deg, rgba(0,58,130,1) 0%, rgba(0,4,42,1) 100%);
 }
+.bgInicio {
+  background: #222831;
+}
 
 /*CODIGO DE DYLAN*/
 .animacionJuegos:hover{
@@ -44,12 +47,67 @@ body {
 
 
 /*Efecto zoom cuando pasas el mouse por un link*/
-.animacionZoom:hover{
-  transform: scale(1.1);
-  color: orange;
-} /*Funciona en el header*/
 /*---------------------------------------------*/
 
 .btnOrange:hover{
   background-color: orange;
+}
+
+
+/*estilos para Preguntas y respuestas en la seccion ayuda*/
+.faq .respuesta {
+  display: none;
+}
+
+.faq .pregunta h2 {
+  cursor: pointer;
+}
+
+.faq .pregunta.active .respuesta {
+  display: block;
+}
+
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.animacionZoom:hover{
+  transform: scale(1.1);
+  color: #F97316;
+} /*Funciona en el header*/
+
+
+@media (min-width: 100px) {
+  .imgInicio { width: 100%; height: 400px; }
+
+  }
+
+
+@media (min-width: 640px) {
+  .imgInicio { width: 100%; height: 600px; }
+  .juegoInicio{
+    width: 400px;
+  }
+ }
+ 
+
+
+@media (min-width: 1024px) {
+  .imgInicio { width: 100%; height: 600px; }
+  .juegoInicio{
+    width: 500px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .imgInicio { width: 100%; height: 700px; }
+  .juegoInicio{
+    width: 500px;
+  }
 }

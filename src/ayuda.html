@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logops1.svg" type="image/x-icon">
     <title>ERDV | Ayuda</title>
 </head>
 <body class="text-white">
@@ -16,7 +18,7 @@
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
                 <div class="flex justify-center">
-                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logoProvisorio.png" alt="El Rincon Del Vicio">
+                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logops1.svg" alt="El Rincon Del Vicio">
                 </div>
                 
                 <div>
@@ -39,42 +41,66 @@
     <main>
         <h1 class="text-center text-2xl my-6 fuente3 text-orange-400 mt-16 mb-16">Soporte Tecnico</h1>
         <div class="pc:mx-20 tablet:mx-20 tv:mx-20 celu:mx-4">
-        <h2 class="text-xl mb-2">● Preguntas Frecuentes (FAQ):</h2>
-        <div class="text-sm">
-            <a href="">¿Cuáles son los requisitos mínimos del sistema para ejecutar los emuladores? </a><br><br>
-            <a href="">¿Cómo configuro un controlador para jugar en el emulador?</a><br><br>
-            <a href="">¿Cuánto espacio en disco se requiere para descargar un juego de PS1?</a><br><br>
-            <a href="">¿Cómo puedo cambiar mi contraseña de la cuenta en la página web?</a>
-        </div>
+            <h2 class="text-xl mb-6">● Preguntas Frecuentes FAQ :</h2>
+            <div class="faq">
+                <div class="pregunta border rounded-xl p-2 mb-4">
+                  <h2>● ¿Cuáles son los requisitos mínimos del sistema para ejecutar los emuladores?</h2>
+                  <div class="respuesta">
+                    <p class="text-orange-500">Respuesta a la pregunta 1</p>
+                  </div>
+                </div>
+                <div class="pregunta border rounded-xl p-2 mb-4">
+                  <h2>● ¿Cómo configuro un controlador para jugar en el emulador?</h2>
+                  <div class="respuesta">
+                    <p class="text-orange-500">Respuesta a la pregunta 2</p>
+                  </div>
+                </div>
+                <div class="pregunta border rounded-xl p-2 mb-4">
+                    <h2>● ¿Cuánto espacio en disco se requiere para descargar un juego de PS1?</h2>
+                    <div class="respuesta">
+                      <p class="text-orange-500">Respuesta a la pregunta 3</p>
+                    </div>
+                  </div>
+                  <div class="pregunta border rounded-xl p-2 mb-4">
+                    <h2>● ¿Cómo puedo cambiar mi contraseña de la cuenta en la página web?</h2>
+                    <div class="respuesta">
+                      <p class="text-orange-500">Respuesta a la pregunta 4</p>
+                    </div>
+                  </div>
+              </div>
+              
         <h2 class="text-left text-1xl my-6 fuente3 text-white mt-10 mb-10">Configuración Estandar de PCSXR</h2>
-        <div class="mb-10 tablet:flex pc:flex tv:flex tablet:space-x-10 pc:space-x-10 tv:space-x-10">
-            <img class="border" width="50%" src="img/configEmulador.png" alt=""><br>
-            <img class="border" width="50%" src="img/joystickConfig.png" alt="">
+        <div class="mb-10 tablet:flex pc:flex tv:flex tablet:space-x-10 pc:space-x-10 celu:text-center">
+            <img class="border inline-block" width="50%" src="img/configEmulador.png" alt=""><br><br>
+            <img class="border inline-block" width="50%" src="img/joystickConfig.png" alt="">
         </div>
 
-        <h2 class="text-xl mb-2">● Politica y condiciones:</h2>
-        <a href="">https://www.politicaycondicionesdeusuario.com</a><br><br>
-
-        <h2 class="text-xl mb-2">● Términos y Condiciones:</h2>
-        <a href=""> https://www.politicaycondicionesdeusuario.com</a><br><br>
-
-        <h2 class="text-xl mb-2">● Formulario de contacto o soporte técnico:</h2>
-        <div class="mt-10">
-            <form action="POST"">
-                <label for="descripcion"></label>
-                <textarea name="descripcion" id="descripcion" class="px-1 text-black" placeholder="Describa Su Problema..." cols="32" rows="3"></textarea><br><br>
-                <label for="name"><b>Nombre&#160;</b></label>
-                <input type="text" name="name" id="name" class="px-1 text-black" placeholder="Ingrese su nombre" required >
-                <br><br>
     
-                <label for="email"><b>Correo@</b></label>
-                <input type="text" name="email" id="email" class="px-1 text-black" placeholder="Ingrese su correo" required>                    
-                <br><br>
 
-                <input class="border p-1 bg-gray-500" type="button" value="Enviar" onclick="validarContrasena(),validarEmail()">
-            </form>
+        <div class="faq">
+            <div class="pregunta border rounded-xl p-2 mb-4">
+            <h2 class="text-lg mb-2">● Formulario de contacto con el soporte técnico</h2>
+            <div class="respuesta">
+            <div class="mt-10">
+                <form action="POST"">
+                    <label for="descripcion"></label>
+                    <textarea name="descripcion" id="descripcion" class="px-1 text-black" placeholder="Describa Su Problema..." cols="32" rows="3"></textarea><br><br>
+                    <label for="name"><b>Nombre&#160;</b></label>
+                    <input type="text" name="name" id="name" class="px-1 text-black" placeholder="Ingrese su nombre" required >
+                    <br><br>
+        
+                    <label for="email"><b>Correo@</b></label>
+                    <input type="text" name="email" id="email" class="px-1 text-black" placeholder="Ingrese su correo" required>                    
+                    <br><br>
+    
+                    <input class="border p-1 bg-gray-500" type="button" value="Enviar" onclick="validarContrasena(),validarEmail()">
+                </form>
+            </div>
+            </div>
         </div>
         </div>
+        </div>
+        
     </main>
 
     <footer class="bg-[#222831] px-2 celu:text-xs text-center">
@@ -87,5 +113,7 @@
             <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
         </div>
     </footer>
+
+    <script src="Funciones js/acordion.js"></script>
 </body>
 </html>
