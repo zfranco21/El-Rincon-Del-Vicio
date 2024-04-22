@@ -1969,8 +1969,10 @@ video {
 }
 
 body {
-  background: rgb(0,58,130);
-  background: linear-gradient(0deg, rgba(0,58,130,1) 0%, rgba(0,4,42,1) 100%);
+  background-image: url("https://media.vandal.net/i/1200x630/40164/new-retro-arcade-neon-201662812649_1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
 }
 
 .bgInicio {
