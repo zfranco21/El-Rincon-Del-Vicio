@@ -4,10 +4,12 @@
 
 
 body {
-    background-image: url("https://media.vandal.net/i/1200x630/40164/new-retro-arcade-neon-201662812649_1.jpg");
+    background-image: url("/src/img/fondoJuegos3.jpg");
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
+    backdrop-filter: blur(1px);
 }
+    
 
 .bgInicio {
   background: #222831;
@@ -26,7 +28,7 @@ body {
 .fuente1 {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
-  font-weight: 200px
+  font-weight: <weight>;
   font-style: normal;
 }
 
