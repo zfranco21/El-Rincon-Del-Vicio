@@ -40,33 +40,35 @@
     <!--Main: necesitamos crear el main de esta pagina en forma de galeria, con la informacion de los juegos y boton de descarga-->
     
     <main class="flex flex-col items-center">
-        <div class="w-full flex justify-center items-center m-5">
-            <div class="flex flex-row-reverse items-center w-3/5 h-10 bg-white rounded-xl">
 
-                <!--BOTON DEL BUSCADOR-->
-
-                <button type="button"><img src="https://icon-library.com/images/free-magnifying-glass-icon/free-magnifying-glass-icon-11.jpg" alt="" class="w-8 h-8 m-3"></button>
-            <input type="text" class="w-full text-black w-11/12 ">
+        <!--BOTON DEL BUSCADOR-->
+        <div class="w-full flex justify-end items-center m-5">
+            <div class="flex flex-row-reverse items-center justify-center w-1/3 h-10 mx-10 bg-slate-800 bg-opacity-70  rounded-xl">
+                <button type="button"><img src="https://ainamoreno.github.io/Reto-Netflix/img/lupa.png" alt="" class="w-8 h-8 m-3"></button>
+                <input type="text" class="w-full text-white h-full w-11/12 bg-transparent p-2 rounded-xl">
             </div>
         </div>
+
+        <!--TITULO-->
         <h1 class="text-center text-3xl my-6 fuente3 text-orange-400
-        ">BIBLIOTECA</h1>
+        ">BIBLIOTECA
+        </h1>
 
         <!--CATALOGO-->
 
         <div class="flex flex-wrap items-center justify-center m-5 w-4/5">
-            <button type="button" class="m-1 p-1 bg-white text-black celu:text-sm btnOrange">Aventura</button>
-            <button type="button" class="m-1 p-1 bg-white text-black celu:text-sm btnOrange">Acción</button>
-            <button type="button" class="m-1 p-1 bg-white text-black celu:text-sm btnOrange">terror</button>
-            <button type="button" class="m-1 p-1 bg-white text-black celu:text-sm btnOrange">Estrategia</button>
-            <button type="button" class="m-1 p-1 bg-white text-black celu:text-sm btnOrange">Casual</button>
+            <button type="button" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Aventura</button>
+            <button type="button" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Acción</button>
+            <button type="button" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">terror</button>
+            <button type="button" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Estrategia</button>
+            <button type="button" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Casual</button>
         </div>
 
         <!--Lista de juegos-->
-        <div class="flex flex-row mt-5 celu:flex-col">
-            <div class="grid grid-cols-3 gap-2 w-4/5 celu:w-10/12 justify-items-center">
+        <div class="flex flex-row mt-5 celu:flex-col w-full">
+            <div class="grid grid-cols-3 gap-5 mx-20 celu:mx-5 celu:gap-2 justify-center">
                         <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="http://www.zonared.com/images/reportajes/100/124/3.jpg" alt="" class="w-44 h-auto">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -74,7 +76,7 @@
                             </a>
                         </div> 
                         <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="https://media.vandal.net/i/1200x630/15192/grand-theft-auto-v-201342141558_1.jpg" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -82,8 +84,8 @@
                             </a>
                         </div>
 
-                        <div class="flex flex-col items-start">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                        <div class="flex flex-col items-center">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="https://esports.as.com/2020/08/21/call-of-duty/Todas-portadas-Call-of-Duty_1384671538_481569_1024x1280.png" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -91,7 +93,7 @@
                             </a>
                         </div>
                         <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="http://www.zonared.com/images/reportajes/100/124/3.jpg" alt="" class="w-44 h-auto">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -99,7 +101,7 @@
                             </a>
                         </div> 
                         <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="https://media.vandal.net/i/1200x630/15192/grand-theft-auto-v-201342141558_1.jpg" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -107,8 +109,8 @@
                             </a>
                         </div>
 
-                        <div class="flex flex-col items-start">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                        <div class="flex flex-col items-center">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="https://esports.as.com/2020/08/21/call-of-duty/Todas-portadas-Call-of-Duty_1384671538_481569_1024x1280.png" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -116,7 +118,7 @@
                             </a>
                         </div>
                         <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="http://www.zonared.com/images/reportajes/100/124/3.jpg" alt="" class="w-44 h-auto">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -124,7 +126,7 @@
                             </a>
                         </div> 
                         <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="https://media.vandal.net/i/1200x630/15192/grand-theft-auto-v-201342141558_1.jpg" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -132,8 +134,8 @@
                             </a>
                         </div>
 
-                        <div class="flex flex-col items-start">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl">
+                        <div class="flex flex-col items-center">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
                                 <img src="https://esports.as.com/2020/08/21/call-of-duty/Todas-portadas-Call-of-Duty_1384671538_481569_1024x1280.png" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
@@ -143,7 +145,7 @@
              </div>
 
              <!--IMAGENES DE ANUNCIOS-->
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center celu:hidden w-2/5">
                 <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2018/12/Descargar-Euro-Truck-Simulator-2-PC-Gratis-min.jpg?resize=576%2C350&ssl=1" alt="" srcset="" class="w-full px-4">
             </div>
         </div>

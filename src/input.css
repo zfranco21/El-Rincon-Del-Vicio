@@ -16,11 +16,10 @@ body {
 }
 
 /*CODIGO DE DYLAN*/
-.animacionJuegos:hover{
-  background-color: white;
-  position: relative;
+.animacionjuego:hover{
+  opacity: 0.1;
+  background-color: gray;
 }
-
 /*CODIGO DE DYLAN*/
 
 
