@@ -4,9 +4,7 @@ CREATE TABLE Usuarios (
     nombre VARCHAR(255),
     correo_electronico VARCHAR(255),
     contrasena_hash VARCHAR(255),
-    fecha_registro DATE,
-);
-
+);    
 --Tabla de juegos con sus atributos
 CREATE TABLE Juegos (
     id_juego INT AUTO_INCREMENT PRIMARY KEY,
@@ -14,7 +12,7 @@ CREATE TABLE Juegos (
     descripcion TEXT,
     url_descarga VARCHAR(255),
     genero VARCHAR(100),
-    lanzamiento DATE,
+    lanzamiento DATETIME,
 );
 
 --Tabla de calificaciones con sus atributos

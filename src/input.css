@@ -8,13 +8,27 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(1px);
+    padding: 0;
+    margin: 0;
 }
     
 
 .bgInicio {
   background: #222831;
 }
+.bg-login_register{
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/934/596/846/abstracto-naranja-textura-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.linkheader {
+  margin-top: 12px;
+}
+
+.link:hover{
+  background-color: orange
+}
 /*CODIGO DE DYLAN*/
 .animacionjuego:hover{
   opacity: 0.1;
@@ -54,6 +68,7 @@ body {
 
 .btnOrange:hover{
   background-color: orange;
+  color: white;
 }
 
 

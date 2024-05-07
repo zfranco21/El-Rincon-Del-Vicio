@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/input.css">
+    <link rel="stylesheet" href="./input.css">
     <link href="./output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,22 +17,22 @@
     <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder" del header-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
-                <div class="flex justify-center">
+                <div class="flex justify-center celu:hidden">
                     <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logops1.svg" alt="El Rincon Del Vicio">
                 </div>
                 
-                <div>
-                    <ul class="tablet:flex pc:flex tv:flex celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
-                        <a class="animacionZoom" href="index.html"><li><b>INICIO</b></li></a>
-                        <a class="animacionZoom" href="juegos.html"><li><b>JUEGOS</b></li></a>
-                        <a class="animacionZoom" href="noticias.html"><li><b>NOTICIAS</b></li></>
-                        <a class="animacionZoom" href="ayuda.html"><li><b>AYUDA</b></li></a>
+                <div class="linkheader">
+                    <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="index.html"><li><b>INICIO</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="juegos.html"><li><b>JUEGOS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="noticias.html"><li><b>NOTICIAS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="ayuda.html"><li><b>AYUDA</b></li></a>
                     </ul>
-                    
+
                 </div>
 
-                <div class="tablet:flex  pc:flex tv:flex celu:text-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
-                    <button class="bg-gray-500 px-1 pb-1 tv:mt-6 btnOrange"><b>Acceder</b></button>
+                <div class="celu:mt-4 tablet:flex  pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
+                    <button class="bg-gray-500 rounded-2xl p-2 pc:mt-4 tv:mt-6 btnOrange"><a class="link hover:text-white p-2 animacionZoom text-white text-decoration-none" href="login_page.html"><b>Acceder</b></a></button>
                 </div>
         </nav>
     </header>
@@ -145,7 +145,7 @@
              </div>
 
              <!--IMAGENES DE ANUNCIOS-->
-            <div class="flex flex-col items-center celu:hidden w-2/5">
+            <div class="flex flex-col items-center">
                 <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2018/12/Descargar-Euro-Truck-Simulator-2-PC-Gratis-min.jpg?resize=576%2C350&ssl=1" alt="" srcset="" class="w-full px-4">
             </div>
         </div>
@@ -170,5 +170,43 @@
             <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
         </div>
     </footer>
+
+    <script>
+        // Definir las imágenes de anuncios y su índice actual
+        let sliderImages = [
+            "https://controlpublicidad.com/uploads/2018/11/playstation2-103700.jpg",
+            "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/11/hitech-suplemento-2.jpg?tf=3840x"
+        ];
+    
+        let sliderImages2 = [
+            "https://i0.wp.com/pivigames.blog/wp-content/uploads/2018/12/Descargar-Euro-Truck-Simulator-2-PC-Gratis-min.jpg?resize=576%2C350&ssl=1",
+            "https://c8.alamy.com/compes/2c6thgt/vigilante-8-2da-ofensa-sony-playstation-1-ps1-psx-solo-uso-editorial-2c6thgt.jpg"
+        ];
+        
+        let currentIndex = 0;
+    
+        // Función para cambiar las imágenes
+        function cambiarImagenes() {
+            // Obtener las referencias a las imágenes de anuncios
+            let image1 = document.getElementById('sliderImagen1');
+            let image2 = document.getElementById('sliderImagen2');
+    
+            // Cambiar las imágenes de anuncios y gestionar la visibilidad
+            image1.src = sliderImages[currentIndex];
+            image2.src = sliderImages2[currentIndex];
+    
+            // Incrementar el índice para las siguientes imágenes
+            currentIndex = (currentIndex + 1) % sliderImages.length;
+    
+            // Reiniciar el temporizador después de 8 segundos
+            setTimeout(cambiarImagenes, 8000);
+        }
+    
+        // Llamar a la función inicialmente
+        cambiarImagenes();
+    </script>
+    
+    
+    
 </body>
 </html>
