@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/input.css">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/logops1.svg" type="image/x-icon">
+    <title>El rincon del vicio</title>
+    
+</head>
+<body>
+    <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder"-->
+    <header>
+        <nav>
+                <div class="logo_content">
+                    <img class="img_logo" src="img/logops1.svg" alt="El Rincon Del Vicio">
+                </div>
+                
+                <div class="linkheader">
+                    <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="index.html"><li><b>INICIO</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="juegos.html"><li><b>JUEGOS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="noticias.html"><li><b>NOTICIAS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="ayuda.html"><li><b>AYUDA</b></li></a>
+                    </ul>
+
+                </div>
+                <div class="celu:mt-4 tablet:flex  pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
+                    <div id="botones">
+                        <div id="boton-registro">
+                            <a href="../app/templates/register.html" class="btn btn-primary">Registrarse</a>
+                        </div>
+                        <div id="boton-perfil" style="display: none;">
+                            <a href="{{ url_for('perfil') }}" class="btn btn-success"></a>
+                        </div>
+                    </div>                    
+                </div>
+                
+
+        </nav>
+    </header>
+
+
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide position-relative">
+    
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/originals/25/ff/0f/25ff0f75103340b192760e9b83f35ed5.jpg" class="d-block imgInicio" alt="Mega Man 8">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <h2 class="fuente1 text-center  bg-orange-500 celu:text-sm">-Mega Man 8-</h2>
+                        <a href="https://youtu.be/E7PAKtjLeQo?si=_ihDC4SKvH3sfGKm" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="img/youtube.svg"  alt="playVideo"></a>
+                        <a href="https://youtu.be/E7PAKtjLeQo?si=_ihDC4SKvH3sfGKm" target="_blank"><img class="border-2 juegoInicio" src="https://i.ytimg.com/vi/iSkXAnhu1Q0/maxresdefault.jpg" alt="Mega Man 8"></a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://wallpapers.com/images/hd/gray-fox-metal-gear-solid-4v13n7fybx0uzlda.jpg" class="d-block imgInicio" alt="Metal Gear Solid">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <h2 class="fuente1 text-center  bg-orange-500 celu:text-sm">-Metal Gear Solid-</h2>
+                        <a href="https://www.youtube.com/watch?v=UZNOI3VTWBk&ab_channel=zapidante" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="img/youtube.svg"  alt="playVideo"></a>
+                        <a href="https://www.youtube.com/watch?v=UZNOI3VTWBk&ab_channel=zapidante" target="_blank"><img class="border-2 juegoInicio" src="https://i0.wp.com/www.pcmrace.com/wp-content/uploads/2017/07/metal-gear-solid-capa.jpg" alt="Metal Gear Solid"></a>
+                    </div>
+                </div>me
+                <div class="carousel-item active">
+                    <img src="img/crash.jpg" class="d-block imgInicio" alt="Crash Bandicoot">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Crash Bandicoot 3-</h2>
+                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="img/youtube.svg" alt="playVideo"></a>
+                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="border-2 juegoInicio" src="https://i.ytimg.com/vi/DGBwXH5P218/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlEag6ZyFMgMBxiPK9BwTvsgYuCw" alt="Crash Bandicoot 3"></a>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <img src="img/previousIcon.png" alt="Previous" width="50" height="50">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <img src="img/nextIcon.png" alt="Next" width="50" height="50">
+                <span class="visually-hidden">Next</span>
+            </button>          
+            <div class="position-absolute bottom-10 start-50 translate-middle">
+                <a href="juegos.html" class="btn btn-primary celu:invisible">Descargá Tus Juegos</a>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a href="juegos.html" class="bg-black w-full pc:hidden tv:hidden tablet:hidden p-4 text-center text-white">Descargá Tu Juegos</a>
+        </div>
+    </main>
+    
+    
+    
+    
+    
+    <!--Footer: Falta agregar enlaces y modificar la información-->
+    <footer class="bg-[#222831] px-2 celu:text-xs text-center">
+        <div class="flex justify-evenly pt-2">
+            <a class="text-white text-decoration-none" href=""><p>Website Regulations</p></a>
+            <a class="text-white text-decoration-none" href=""><p>Website rules</p></a>
+            <a class="text-white text-decoration-none" href=""><p>Privacy Policy</p></a>
+        </div>
+        <div class="pb-4">
+            <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"/></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>

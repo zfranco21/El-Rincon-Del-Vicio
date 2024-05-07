@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('src_static', filename='styles.css') }}">
+    <link href="{{ url_for('static', filename='output.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('src_static', filename='input.css') }}">
+    <link rel="stylesheet" href="/static/styles.css">
     <link rel="shortcut icon" href="img/logops1.svg" type="image/x-icon">
     <title>El rincon del vicio</title>
     
@@ -35,7 +39,7 @@
                 <div class="celu:mt-4 tablet:flex  pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
                     <div id="botones">
                         <div id="boton-registro">
-                            <a href="register.html" class="btn btn-primary">Registrarse</a>
+                            <a href="../app/templates/register.html" class="btn btn-primary">Registrarse</a>
                         </div>
                         <div id="boton-perfil" style="display: none;">
                             <a href="{{ url_for('perfil') }}" class="btn btn-success"></a>
