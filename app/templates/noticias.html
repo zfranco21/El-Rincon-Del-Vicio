@@ -4,8 +4,8 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="./input.css">
-            <link href="./output.css" rel="stylesheet">
+            <link rel="stylesheet" href="{{ url_for('static', filename='src/input.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
@@ -14,20 +14,20 @@
             <link rel="shortcut icon" href="img/logops1.svg" type="image/x-icon">
     <title>ERDV | Noticias</title>
 </head>
-<body class="text-white">
+<body class="fondo text-white">
     <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder"-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
                 <div class="flex justify-center celu:hidden">
-                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logops1.svg" alt="El Rincon Del Vicio">
+                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
                 </div>
                 
                 <div class="linkheader">
                     <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="index.html"><li><b>INICIO</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="juegos.html"><li><b>JUEGOS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="noticias.html"><li><b>NOTICIAS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="ayuda.html"><li><b>AYUDA</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
                     </ul>
 
                 </div>
