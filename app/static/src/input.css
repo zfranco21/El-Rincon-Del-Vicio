@@ -11,6 +11,10 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.fondo {
+  background-image: radial-gradient(circle at 37.72% -19.64%, #e5e6ef 0, #dfe0e3 25%, #d9d9d8 50%, #d2d3cd 75%, #cbcdc3 100%);
+}
     
 
 .bgInicio {
