@@ -32,14 +32,14 @@
 
                 </div>
                 <div class="celu:mt-4 tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6 mt-4">
-                    <div id="botones">
+                    <div id="authenticated" data-authenticated="{{ 'true' if current_user.is_authenticated else 'false' }}">
                         <div id="boton-registro" style="display: {% if not authenticated %}block{% else %}none{% endif %};">
                             <a class="inline-block border rounded-full p-1 bg-gray-500 hover:bg-orange-500 text-white" href="{{ url_for('show_signup_form') }}"><b>Registrarse</b></a>
                         </div>                    
                         <div id="boton-perfil" style="display: {% if current_user.is_authenticated %}block{% else %}none{% endif %};">
                             <a href="{{ url_for('perfil') }}" class="border-black rounded-2xl p-1 bg-sky-600 hover:bg-sky-700 text-white">{{ current_user.name }}</a>
                         </div>  
-                    </div>                    
+                    </div>                     
                 </div>
         </nav>
     </header>
@@ -98,15 +98,12 @@
 
     <script>
         
-        var authenticated = {{ 'true' if current_user.is_authenticated else 'false' }};
+        var authenticated = document.getElementById('authenticated').getAttribute('data-authenticated');
 
         // Oculta el botón de registro si el usuario está autenticado
-        if (authenticated === true) {
-            document.getElementById('boton-registro').style.display = 'none';
+        if (authenticated === 'true') {
+           document.getElementById('boton-registro').style.display = 'none';
         }
-        //este script de arriba sirve para ocultar el boton de "registrarme" cuando el usuario ya se registro.-->
-        //el error que sale en la linea de codigo es por que estoy usando jinja2 de flask para crear esta funcion-->
-        //de otra forma no podemos interactuar con el boton, por el momento va a quedar asi hasta que encuentre alguna solución-->
 
     </script>
 
