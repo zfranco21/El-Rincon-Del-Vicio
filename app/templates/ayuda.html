@@ -13,30 +13,35 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
     <title>ERDV | Ayuda</title>
 </head>
-<body class="fondo text-black">
+<body class="fondo text-white">
     <!--Header: hay que crear formulario Login/Register para el boton "Acceder"-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
-                <div class="flex justify-center celu:hidden">
-                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
-                </div>
-                
-                <div class="linkheader">
-                    <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
-                    </ul>
-
-                </div>
-                <div class="celu:mt-4 tablet:flex  pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
-                    <button class="bg-gray-500 rounded-2xl p-2 pc:mt-4 tv:mt-6 btnOrange"><a class="text-white  hover:text-white p-2 animacionZoomtext-decoration-none" href="login_page.html"><b>Acceder</b></a></button>
-                </div>
+            <div class="flex justify-center celu:hidden">
+                <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
+            </div>
+            <div class="linkheader">
+                <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
+                </ul>
+            </div>
+            <div class="celu:mt-4 tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6 mt-4">
+                <div id="botones">
+                    <div id="boton-registro" style="display: {% if not authenticated %}block{% else %}none{% endif %};">
+                        <a class="inline-block border rounded-full p-1 bg-gray-500 hover:bg-orange-400 text-white" href="{{ url_for('show_signup_form') }}"><b>Registrarse</b></a>
+                    </div>                    
+                    <div id="boton-perfil" style="display: {% if current_user.is_authenticated %}block{% else %}none{% endif %};">
+                        <a href="{{ url_for('perfil') }}" class="border-black rounded-2xl p-1 bg-sky-600 hover:bg-sky-700 text-white">{{ current_user.name }}</a>
+                    </div>  
+                </div>                    
+            </div>
         </nav>
     </header>
 <!--Hay que crear la seccion main, en esta pagina tendrian que estar las preguntas frecuentes, tutoriales, ayuda para los usuarios-->
-    <main>
+    <main class="text-black">
         <h1 class="text-center text-2xl my-6 fuente3 text-orange-400 mt-16 mb-16">Soporte Tecnico</h1>
         <div class="pc:mx-20 tablet:mx-20 tv:mx-20 celu:mx-4">
             <h2 class="text-xl mb-6">● Preguntas Frecuentes FAQ :</h2>
@@ -113,5 +118,19 @@
     </footer>
 
     <script src="{{ url_for('static', filename='Funciones js/acordion.js') }}"></script>
+
+    <script>
+        
+        var authenticated = {{ 'true' if current_user.is_authenticated else 'false' }};
+
+        // Oculta el botón de registro si el usuario está autenticado
+        if (authenticated === true) {
+            document.getElementById('boton-registro').style.display = 'none';
+        }
+        //este script de arriba sirve para ocultar el boton de "registrarme" cuando el usuario ya se registro.-->
+        //el error que sale en la linea de codigo es por que estoy usando jinja2 de flask para crear esta funcion-->
+        //de otra forma no podemos interactuar con el boton, por el momento va a quedar asi hasta que encuentre alguna solución-->
+
+    </script>
 </body>
 </html>

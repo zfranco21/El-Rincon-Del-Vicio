@@ -1,12 +1,79 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='src/input.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
-    <title>Document</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
+    <title>El rincon del vicio</title>
 </head>
-<body>
-    <h1>este es tu perfil</h1>
+<body class="bgInicio text-white">
+    <!--Header-->
+    <header class="bg-[#222831]">
+        <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
+            <div class="flex justify-center celu:hidden">
+                <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
+            </div>
+            <div class="linkheader">
+                <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
+                </ul>
+            </div>
+            <div class="celu:mt-4 tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6 mt-4">
+                <div id="botones">
+                    <div id="boton-registro" style="display: {% if not authenticated %}block{% else %}none{% endif %};">
+                        <a class="inline-block border rounded-full p-1 bg-gray-500 hover:bg-orange-500 text-white" href="{{ url_for('show_signup_form') }}"><b>Registrarse</b></a>
+                    </div>                    
+                    <div id="boton-perfil" style="display: {% if current_user.is_authenticated %}block{% else %}none{% endif %};">
+                        <a href="{{ url_for('perfil') }}" class="border-black rounded-2xl p-1 bg-sky-600 hover:bg-sky-700 text-white">{{ current_user.name }}</a>
+                    </div>  
+                </div>                    
+            </div>
+        </nav>
+    </header>
+    <main class="mt-40 text-center">
+        <h1>Bienvenido a tu perfil, {{ current_user.name }}</h1>
+        
+        <div>
+            <h2>Información de Usuario:</h2>
+            <p><strong>Nombre:</strong> {{ current_user.name }}</p>
+            <p><strong>Correo Electrónico:</strong> {{ current_user.email }}</p>
+            <!-- Agrega más información del usuario según sea necesario -->
+        </div>
+        
+        <!-- Puedes agregar más contenido HTML según lo necesites -->
+    
+        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    </main>
+
+
+    <script>
+        
+        var authenticated = {{ 'true' if current_user.is_authenticated else 'false' }};
+
+        // Oculta el botón de registro si el usuario está autenticado
+        if (authenticated === true) {
+            document.getElementById('boton-registro').style.display = 'none';
+        }
+        //este script de arriba sirve para ocultar el boton de "registrarme" cuando el usuario ya se registro.-->
+        //el error que sale en la linea de codigo es por que estoy usando jinja2 de flask para crear esta funcion-->
+        //de otra forma no podemos interactuar con el boton, por el momento va a quedar asi hasta que encuentre alguna solución-->
+
+    </script>
 </body>
 </html>
+
+
+<!--todavia falta que termine esta pagina y tambien falta unir los formularios de registro y
+     login a la base de datos asi quedan guardados y puede loguearse denuevo cuando sale de 
+     su cuenta sin tener que crear una nueva cuenta-->

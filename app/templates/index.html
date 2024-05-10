@@ -13,76 +13,88 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
     <title>El rincon del vicio</title>
-    
 </head>
 <body class="bgInicio text-white">
-    <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder"-->
+    <!--Header-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
-                <div class="flex justify-center celu:hidden">
-                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
-                </div>
-                
-                <div class="linkheader">
-                    <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
-                    </ul>
-                    
-                </div>
-                <div class="celu:mt-4 tablet:flex  pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
-                    <div id="botones">
-                        <div id="boton-registro">
-                            <a href="../app/templates/register.html" class="btn btn-primary">Registrarse</a>
-                        </div>
-                        <div id="boton-perfil" style="display: none;">
-                            <a href="{{ url_for('perfil') }}" class="btn btn-success"></a>
-                        </div>
+            <div class="flex justify-center celu:hidden">
+                <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
+            </div>
+            <div class="linkheader">
+                <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
+                    <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
+                </ul>
+            </div>
+            <div class="celu:mt-4 tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6 mt-4">
+                <div id="botones">
+                    <div id="boton-registro" style="display: {% if not authenticated %}block{% else %}none{% endif %};">
+                        <a class="inline-block border rounded-full p-1 bg-gray-500 hover:bg-orange-400 text-white" href="{{ url_for('show_signup_form') }}"><b>Registrarse</b></a>
                     </div>                    
-                </div>
-                
-
+                    <div id="boton-perfil" style="display: {% if current_user.is_authenticated %}block{% else %}none{% endif %};">
+                        <a href="{{ url_for('perfil') }}" class="border-black rounded-2xl p-1 bg-sky-600 hover:bg-sky-700 text-white">{{ current_user.name }}</a>
+                    </div>  
+                </div>                    
+            </div>
         </nav>
     </header>
 
-
+    <!-- Main content -->
     <main>
+        <!-- Carousel -->
         <div id="carouselExampleIndicators" class="carousel slide position-relative">
-    
+            <!-- Carousel Indicators -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            <!-- Carousel Items -->
             <div class="carousel-inner">
+                <!-- Item 1 -->
                 <div class="carousel-item">
+                    <!-- Image -->
                     <img src="https://i.pinimg.com/originals/25/ff/0f/25ff0f75103340b192760e9b83f35ed5.jpg" class="d-block imgInicio" alt="Mega Man 8">
+                    <!-- Content -->
                     <div class="position-absolute top-50 start-50 translate-middle">
-                        <h2 class="fuente1 text-center  bg-orange-500 celu:text-sm">-Mega Man 8-</h2>
-                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12"src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
+                        <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Mega Man 8-</h2>
+                        <!-- Video -->
+                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
+                        <!-- Link to video -->
                         <a href="https://youtu.be/E7PAKtjLeQo?si=_ihDC4SKvH3sfGKm" target="_blank"><img class="border-2 juegoInicio" src="https://i.ytimg.com/vi/iSkXAnhu1Q0/maxresdefault.jpg" alt="Mega Man 8"></a>
                     </div>
                 </div>
+                <!-- Item 2 -->
                 <div class="carousel-item">
+                    <!-- Image -->
                     <img src="https://wallpapers.com/images/hd/gray-fox-metal-gear-solid-4v13n7fybx0uzlda.jpg" class="d-block imgInicio" alt="Metal Gear Solid">
+                    <!-- Content -->
                     <div class="position-absolute top-50 start-50 translate-middle">
-                        <h2 class="fuente1 text-center  bg-orange-500 celu:text-sm">-Metal Gear Solid-</h2>
-                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12"src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
+                        <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Metal Gear Solid-</h2>
+                        <!-- Video -->
+                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
+                        <!-- Link to video -->
                         <a href="https://www.youtube.com/watch?v=UZNOI3VTWBk&ab_channel=zapidante" target="_blank"><img class="border-2 juegoInicio" src="https://i0.wp.com/www.pcmrace.com/wp-content/uploads/2017/07/metal-gear-solid-capa.jpg" alt="Metal Gear Solid"></a>
                     </div>
-                </div>me
+                </div>
+                <!-- Item 3 -->
                 <div class="carousel-item active">
+                    <!-- Image -->
                     <img src="{{ url_for('static', filename='img/crash.jpg') }}" class="d-block imgInicio" alt="Crash Bandicoot">
+                    <!-- Content -->
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Crash Bandicoot 3-</h2>
-                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12"src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
+                        <!-- Video -->
+                        <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
+                        <!-- Link to video -->
                         <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="border-2 juegoInicio" src="https://i.ytimg.com/vi/DGBwXH5P218/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlEag6ZyFMgMBxiPK9BwTvsgYuCw" alt="Crash Bandicoot 3"></a>
                     </div>
                 </div>
-
             </div>
+            <!-- Carousel Controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <img src="{{ url_for('static', filename='img/previousIcon.png') }}" alt="Previous" width="50" height="50">
                 <span class="visually-hidden">Previous</span>
@@ -91,20 +103,18 @@
                 <img src="{{ url_for('static', filename='img/nextIcon.png') }}" alt="Next" width="50" height="50">
                 <span class="visually-hidden">Next</span>
             </button>          
+            <!-- Button to download games -->
             <div class="position-absolute bottom-10 start-50 translate-middle">
                 <a href="juegos.html" class="btn btn-primary celu:invisible">Descargá Tus Juegos</a>
             </div>
         </div>
+        <!-- Button to download games (mobile) -->
         <div class="flex justify-center">
             <a href="juegos.html" class="bg-black w-full pc:hidden tv:hidden tablet:hidden p-4 text-center text-white">Descargá Tu Juegos</a>
         </div>
     </main>
     
-    
-    
-    
-    
-    <!--Footer: Falta agregar enlaces y modificar la información-->
+    <!--Footer-->
     <footer class="bg-[#222831] px-2 celu:text-xs text-center">
         <div class="flex justify-evenly pt-2">
             <a class="text-white text-decoration-none" href=""><p>Website Regulations</p></a>
@@ -112,12 +122,26 @@
             <a class="text-white text-decoration-none" href=""><p>Privacy Policy</p></a>
         </div>
         <div class="pb-4">
-            <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
+            <p>© 2019-2024 ElRinconDelVicio - Download free games PC.</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"/></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
     <script src="main.js"></script>
+
+    <script>
+        
+        var authenticated = {{ 'true' if current_user.is_authenticated else 'false' }};
+
+        // Oculta el botón de registro si el usuario está autenticado
+        if (authenticated === true) {
+            document.getElementById('boton-registro').style.display = 'none';
+        }
+        //este script de arriba sirve para ocultar el boton de "registrarme" cuando el usuario ya se registro.-->
+        //el error que sale en la linea de codigo es por que estoy usando jinja2 de flask para crear esta funcion-->
+        //de otra forma no podemos interactuar con el boton, por el momento va a quedar asi hasta que encuentre alguna solución-->
+
+    </script>
+
 </body>
 </html>

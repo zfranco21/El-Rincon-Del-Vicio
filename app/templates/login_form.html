@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/input.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
+    <title>Login ERDV</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="mb-2 flex ml-4 mt-4">
+        <a href="{{ url_for('index') }}" class="text-black flex items-start justify-center text-xl font-bold fuente1 bg-white shadow-md p-2 rounded-full">
+        <img src="{{ url_for('static', filename='img/back.svg') }}" class="w-6 inline-block mx-2" alt="">Inicio</a>
+    </div>
+    <main class="flex justify-center items-center h-screen">
+        <div class="w-full max-w-md">
+            <div class="bg-white shadow-md rounded px-8 pt-2 pb-8 mb-4">
+                <h2 class="text-2xl font-bold mb-4">Login</h2>
+                <form action="" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+                    <div class="mb-4">
+                        {{ form.email.label(class="block text-gray-700 text-sm font-bold mb-2") }}
+                        {{ form.email(class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") }}
+                        {% for error in form.email.errors %}
+                        <p class="text-red-500 text-xs italic">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-6">
+                        {{ form.password.label(class="block text-gray-700 text-sm font-bold mb-2") }}
+                        {{ form.password(class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") }}
+                        {% for error in form.password.errors %}
+                        <p class="text-red-500 text-xs italic">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="flex items-center justify-center">
+                        {{ form.submit(class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline") }}
+                    </div>
+                </form>
+                <div class="flex justify-center mt-4">
+                    <div class="mt-4">¿No tienes cuenta? <a class=" text-blue-500 hover:text-blue-700" href="{{ url_for('show_signup_form') }}">Regístrate</a></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
