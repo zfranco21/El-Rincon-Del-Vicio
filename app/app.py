@@ -3,7 +3,7 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__, static_url_path='/static')
 
-# Configuración de la base de datos MySQL en Railway
+# Configuración de la base de datos MySQL en Railwayp
 app.config['MYSQL_HOST'] = 'monorail.proxy.rlwy.net'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'pnxBFMWIFsWIMuULWAbEIpITJeKKRcDaT'

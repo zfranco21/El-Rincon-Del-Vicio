@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./input.css">
-    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/input.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logops1.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
     <title>ERDV | Juegos</title>
 </head>
-<body class="text-white">
+<body class="text-white fondo">
     <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder" del header-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
                 <div class="flex justify-center celu:hidden">
-                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="img/logops1.svg" alt="El Rincon Del Vicio">
+                    <img class="celu:w-8 tablet:w-10 pc:w-12 tv:w-14" src="{{ url_for('static', filename='img/logops1.svg') }}" alt="El Rincon Del Vicio">
                 </div>
                 
                 <div class="linkheader">
                     <ul class="tablet:flex pc:flex tv:flex celu:flex celu:justify-center celu:text-center celu:space-x-2 tablet:space-x-4 pc:space-x-6 celu:text-xs tv:text-xl tv:mx-20 tv:space-x-8">
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="index.html"><li><b>INICIO</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="juegos.html"><li><b>JUEGOS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="noticias.html"><li><b>NOTICIAS</b></li></a>
-                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="ayuda.html"><li><b>AYUDA</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('index') }}"><li><b>INICIO</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('juegos') }}"><li><b>JUEGOS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('noticias') }}"><li><b>NOTICIAS</b></li></a>
+                        <a class="link rounded-2xl hover:text-white border p-2 animacionZoom text-white text-decoration-none" href="{{ url_for('ayuda') }}"><li><b>AYUDA</b></li></a>
                     </ul>
-
                 </div>
 
                 <div class="celu:mt-4 tablet:flex  pc:flex tv:flex celu:flex celu:justify-center celu:space-x-2 celu:text-xs tablet:space-x-2 pc:space-x-4 tv:space-x-6 tv:text-xl tv:mb-6">
-                    <button class="bg-gray-500 rounded-2xl p-2 pc:mt-4 tv:mt-6 btnOrange"><a class="link hover:text-white p-2 animacionZoom text-white text-decoration-none" href="login_page.html"><b>Acceder</b></a></button>
+                    <button class="bg-gray-500 rounded-2xl p-2 pc:mt-4 tv:mt-6 btnOrange"><a class="text-white  hover:text-white p-2 animacionZoomtext-decoration-none" href="login_page.html"><b>Acceder</b></a></button>
                 </div>
         </nav>
     </header>
@@ -45,7 +44,7 @@
         <div class="w-full flex justify-end items-center m-5">
             <div class="flex flex-row-reverse items-center justify-center w-1/3 h-10 mx-10 bg-slate-800 bg-opacity-70  rounded-xl">
                 <button type="button"><img src="https://ainamoreno.github.io/Reto-Netflix/img/lupa.png" alt="" class="w-8 h-8 m-3"></button>
-                <input type="text" class="w-full text-white h-full w-11/12 bg-transparent p-2 rounded-xl">
+                <input type="text" class="w-full text-white h-full bg-transparent p-2 rounded-xl">
             </div>
         </div>
 
@@ -65,11 +64,11 @@
         </div>
 
         <!--Lista de juegos-->
-        <div class="flex flex-row mt-5 celu:flex-col w-full">
+        <div class="flex flex-row mt-5 celu:flex-col">
             <div class="grid grid-cols-3 gap-5 mx-20 celu:mx-5 celu:gap-2 justify-center">
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="http://www.zonared.com/images/reportajes/100/124/3.jpg" alt="" class="w-44 h-auto">
+                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -77,7 +76,7 @@
                         </div> 
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="https://media.vandal.net/i/1200x630/15192/grand-theft-auto-v-201342141558_1.jpg" alt="" class="w-44 h-auto animacionJuegos">
+                                <img src="{{ url_for('static', filename='img/juegos/residentEvil.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -86,7 +85,7 @@
 
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="https://esports.as.com/2020/08/21/call-of-duty/Todas-portadas-Call-of-Duty_1384671538_481569_1024x1280.png" alt="" class="w-44 h-auto animacionJuegos">
+                                <img src="{{ url_for('static', filename='img/juegos/tm3.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -94,7 +93,7 @@
                         </div>
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="http://www.zonared.com/images/reportajes/100/124/3.jpg" alt="" class="w-44 h-auto">
+                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -102,7 +101,15 @@
                         </div> 
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="https://media.vandal.net/i/1200x630/15192/grand-theft-auto-v-201342141558_1.jpg" alt="" class="w-44 h-auto animacionJuegos">
+                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
+                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
+                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
+                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
+                            </a>
+                        </div> 
+                        <div class="flex flex-col items-center">
+                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
+                                <img src="{{ url_for('static', filename='img/juegos/residentEvil.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -111,7 +118,7 @@
 
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="https://esports.as.com/2020/08/21/call-of-duty/Todas-portadas-Call-of-Duty_1384671538_481569_1024x1280.png" alt="" class="w-44 h-auto animacionJuegos">
+                                <img src="{{ url_for('static', filename='img/juegos/tm3.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -119,7 +126,7 @@
                         </div>
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="http://www.zonared.com/images/reportajes/100/124/3.jpg" alt="" class="w-44 h-auto">
+                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
@@ -127,26 +134,20 @@
                         </div> 
                         <div class="flex flex-col items-center">
                             <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="https://media.vandal.net/i/1200x630/15192/grand-theft-auto-v-201342141558_1.jpg" alt="" class="w-44 h-auto animacionJuegos">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div>
-
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="https://esports.as.com/2020/08/21/call-of-duty/Todas-portadas-Call-of-Duty_1384671538_481569_1024x1280.png" alt="" class="w-44 h-auto animacionJuegos">
+                                <img src="{{ url_for('static', filename='img/juegos/residentEvil.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
                                 <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
                                 <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
                                 <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
                             </a>
                         </div>
              </div>
+             
 
              <!--IMAGENES DE ANUNCIOS-->
             <div class="flex flex-col items-center">
-                <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2018/12/Descargar-Euro-Truck-Simulator-2-PC-Gratis-min.jpg?resize=576%2C350&ssl=1" alt="" srcset="" class="w-full px-4">
+                <img src="{{ url_for('static', filename='img/publi/euroTruck.jpg') }}" alt="" srcset="" class="w-80 mb-2 px-4">
+                <img src="{{ url_for('static', filename='img/publi/play.jpg') }}" alt="" srcset="" class="w-80 mt-20 mb2 px-4">
+                <img src="{{ url_for('static', filename='img/publi/lolMobile.jpg') }}" alt="" srcset="" class="w-80 mt-20 px-4">
             </div>
         </div>
     </main>
