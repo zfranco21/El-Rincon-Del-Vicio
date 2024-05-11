@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
     <title>El rincon del vicio</title>
 </head>
-<body class="bgInicio text-white">
+<body class="fondo text-white">
     <!--Header-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
@@ -41,35 +41,54 @@
             </div>
         </nav>
     </header>
-    <main class="mt-40 text-center">
-        <h1>Bienvenido a tu perfil, {{ current_user.name }}</h1>
+
+    <main class="mt-20 text-center">
+        <div class="">
+            <h1 class="text-2xl mb-10 font-bold text-black">Bienvenido a tu perfil, <span class="text-orange-500">{{ current_user.name }}</span></h1>
+            
+            <div class="bg-slate-800 bg-opacity-30 mx-80">
+                <h2 class="text-xl font-bold mb-10 pt-10">Información de Usuario:</h2>
+                <div class="mt-10">
+                    
+
+                </div>
+                <p class="text-xl mt-10"><strong>Nombre:</strong> {{ current_user.name }}</p>
+                <p class="text-xl pb-10"><strong>Correo Electrónico:</strong> {{ current_user.email }}</p>
+            </div>
         
-        <div>
-            <h2>Información de Usuario:</h2>
-            <p><strong>Nombre:</strong> {{ current_user.name }}</p>
-            <p><strong>Correo Electrónico:</strong> {{ current_user.email }}</p>
-            <!-- Agrega más información del usuario según sea necesario -->
-        </div>
-        
-        <!-- Puedes agregar más contenido HTML según lo necesites -->
+            <!-- Botónes: Cerrar sesion y eliminar cuenta -->
+            <div class="flex justify-center items-center space-x-4">
+                <div class="mt-10 mb-20">
+                    <a class="btn btn-secondary" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                </div>
     
-        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+                <div class="mt-10 mb-20">
+                    <form action="{{ url_for('eliminar_usuario', user_id=current_user.id) }}" method="post">
+                        <button type="submit" class="btn btn-danger">Eliminar Cuenta</button>
+                    </form>
+                </div>  
+            </div>
+          
+        </div>
     </main>
 
     <script>
-        
+        // esto oculta el botón de registro si el usuario está autenticado
         var authenticated = document.getElementById('authenticated').getAttribute('data-authenticated');
-
-        // Oculta el botón de registro si el usuario está autenticado
         if (authenticated === 'true') {
-           document.getElementById('boton-registro').style.display = 'none';
+            document.getElementById('boton-registro').style.display = 'none';
         }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+         document.getElementById('browse_button').addEventListener('click', function () {
+        document.getElementById('profile_image').click();
+        });
+    });
 
     </script>
 </body>
 </html>
 
 
-<!--todavia falta que termine esta pagina y tambien falta unir los formularios de registro y
-     login a la base de datos asi quedan guardados y puede loguearse denuevo cuando sale de 
-     su cuenta sin tener que crear una nueva cuenta-->

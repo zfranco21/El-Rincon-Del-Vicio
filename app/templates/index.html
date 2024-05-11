@@ -105,12 +105,12 @@
             </button>          
             <!-- Button to download games -->
             <div class="position-absolute bottom-10 start-50 translate-middle">
-                <a href="juegos.html" class="btn btn-primary celu:invisible">Descargá Tus Juegos</a>
+                <a href="{{ url_for('juegos') }}" class="btn btn-primary celu:invisible">Descargá Tus Juegos</a>
             </div>
         </div>
         <!-- Button to download games (mobile) -->
         <div class="flex justify-center">
-            <a href="juegos.html" class="bg-black w-full pc:hidden tv:hidden tablet:hidden p-4 text-center text-white">Descargá Tu Juegos</a>
+            <a href="{{ url_for('juegos') }}" class="bg-black w-full pc:hidden tv:hidden tablet:hidden p-4 text-center text-white">Descargá Tu Juegos</a>
         </div>
     </main>
     

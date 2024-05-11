@@ -3,8 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User(UserMixin):
-
-    def __init__(self, id, name, email, password, is_admin=False):
+    def __init__(self, id, name, email, password, profile_picture=None, is_admin=False):
         self.id = id
         self.name = name
         self.email = email
@@ -19,10 +18,8 @@ class User(UserMixin):
 
     def __repr__(self):
         return '<User {}>'.format(self.email)
-    
 
 users = []
-
 
 def get_user(email):
     for user in users:
