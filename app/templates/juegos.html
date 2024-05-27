@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
+
     <title>ERDV | Juegos</title>
 </head>
 <body class="text-white fondo">
@@ -71,102 +72,41 @@
         </div>
 
         <!--Lista de juegos-->
-        <div class="flex flex-row mt-5 celu:flex-col">
-            <div class="grid grid-cols-3 gap-5 mx-20 celu:mx-5 celu:gap-2 justify-center">
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div> 
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/residentEvil.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div>
-
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/tm3.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div> 
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div> 
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/residentEvil.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div>
-
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/tm3.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/extreme3.jpg') }}" alt="" class="w-44 h-auto">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div> 
-                        <div class="flex flex-col items-center">
-                            <a href="" class="bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">
-                                <img src="{{ url_for('static', filename='img/juegos/residentEvil.jpg') }}" alt="" class="w-44 h-auto animacionJuegos">
-                                <h2 class="text-base fuente2 mt-3.5 celu:text-xs">NOMBRE DEL JUEGO</h2>
-                                <p class="text-sm my-0.5 celu:text-xs">Supervivencia - shooter</p>
-                                <p class="text-base fuente2 my-0.5 celu:text-xs">2023</p>
-                            </a>
-                        </div>
-             </div>
+        
+        <div class="mx-auto">
+            <h1 class="text-3xl font-bold my-8">Lista de Juegos</h1>
+            <div class="grid grid-cols-3 gap-4 w-1/4">
+                {% for product in products %}
+                    <div class="bg-white p-4 shadow-md">
+                        <h2 class="text-xl font-semibold mb-2">{{ product.nombre }}</h2>
+                        <img src="{{ product.url_imagen }}" alt="{{ product.nombre }}" class="w-full mb-2">
+                        <p class="text-sm text-gray-600">Género: {{ product.genero }}</p>
+                        <p class="text-sm text-gray-600">Lanzamiento: {{ product.lanzamiento }}</p>
+                        <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}" class="text-blue-500 mt-2 block">Ver más</a>
+                    </div>
+                {% endfor %}
+            </div>
              
-
-             <!--IMAGENES DE ANUNCIOS-->
-            <div class="flex flex-col items-center">
-                <img src="{{ url_for('static', filename='img/publi/euroTruck.jpg') }}" alt="" srcset="" class="w-80 mb-2 px-4">
-                <img src="{{ url_for('static', filename='img/publi/play.jpg') }}" alt="" srcset="" class="w-80 mt-20 mb2 px-4">
-                <img src="{{ url_for('static', filename='img/publi/lolMobile.jpg') }}" alt="" srcset="" class="w-80 mt-20 px-4">
+             
+    
+            <!--PASADOR DE PAGINAS-->
+            <div class="mt-8">
+                {% if page > 1 %}
+                    <a href="{{ url_for('juegos', page=page-1) }}" class="text-blue-500">Anterior</a>
+                {% endif %}
+                {% for p in range(1, total_pages + 1) %}
+                    {% if p == page %}
+                        <span class="text-blue-500 font-semibold">{{ p }}</span>
+                    {% else %}
+                        <a href="{{ url_for('juegos', page=p) }}" class="text-blue-500">{{ p }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if page < total_pages %}
+                    <a href="{{ url_for('juegos', page=page+1) }}" class="text-blue-500">Siguiente</a>
+                {% endif %}
             </div>
         </div>
     </main>
-    <!--PASADOR DE PAGINAS-->
-    <div class="flex flex-col">
-        <div class="flex flex-row items-center justify-center">
-            <a href="#"><p class="text-3xl m-2"><</p></a>
-            <p class="text-3x1 m-1">1</p>
-            <a href="#"><p class="text-3xl m-2">></p></a>
-        </div>
-    </div>
-
     <!--PIE DE PAGINA-->
     <footer class="bg-[#222831] px-2 celu:text-xs text-center">
         <div class="mt-20 mb-2 flex justify-evenly pt-2">

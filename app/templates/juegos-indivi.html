@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ juegos_indivi.nombre }}</title>
+    <link rel="stylesheet" href="path/to/your/css/styles.css">
+</head>
+<body>
+    <h1>{{ juegos_indivi.nombre }}</h1>
+    <img src="{{ juegos_indivi.url_imagen }}" alt="{{ juegos_indivi.nombre }}">
+    <p>Género: {{ juegos_indivi.genero }}</p>
+    <p>Lanzamiento: {{ juegos_indivi.lanzamiento }}</p>
+    <a href="{{ juegos_indivi.url_descarga }}">DESCARGAR</a> <hr>
+    <a href="{{ url_for('juegos') }}">Volver a la lista de juegos</a>
+</body>
+</html>

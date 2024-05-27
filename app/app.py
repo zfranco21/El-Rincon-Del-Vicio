@@ -4,6 +4,9 @@ from flask_mysqldb import MySQL
 from forms import SignupForm, LoginForm
 from models import User
 import os
+import MySQLdb.cursors
+import math
+import MySQLdb
 
 app = Flask(__name__)
 
@@ -34,11 +37,37 @@ def perfil():
     form = SignupForm()  # Crear una instancia del formulario SignupForm
     return render_template('perfil.html', user_id=user_id, form=form)
 
-
 @app.route('/juegos')
 def juegos():
-    # Aca estaria la lógica para manejar la ruta /juegos
-    return render_template('juegos.html')
+    page = request.args.get('page', 1, type=int)
+    per_page = 9
+    offset = (page - 1) * per_page
+
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT COUNT(*) FROM Juegos')
+    total_products = cursor.fetchone()['COUNT(*)']
+    cursor.close()
+
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT id_juego, nombre, url_imagen, genero, lanzamiento FROM Juegos LIMIT %s OFFSET %s', (per_page, offset))
+    products = cursor.fetchall()
+    cursor.close()
+
+    total_pages = math.ceil(total_products / per_page)
+
+    return render_template('juegos.html', products=products, page=page, total_pages=total_pages)
+
+@app.route('/juegos-indivi/<int:juegos_indivi_id>')
+def juegos_indivi(juegos_indivi_id):
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT id_juego, nombre, url_imagen, genero, lanzamiento, url_descarga FROM Juegos WHERE id_juego = %s', (juegos_indivi_id,))
+    juegos_indivi = cursor.fetchone()
+    cursor.close()
+    if juegos_indivi:
+        return render_template('juegos-indivi.html', juegos_indivi=juegos_indivi)
+    else:
+        return "Juego no encontrado", 404
+    
 
 @app.route('/noticias')
 def noticias():
