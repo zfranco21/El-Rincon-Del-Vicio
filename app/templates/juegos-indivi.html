@@ -2,15 +2,55 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/input.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logops1.svg') }}" type="image/x-icon">
     <title>{{ juegos_indivi.nombre }}</title>
     <link rel="stylesheet" href="path/to/your/css/styles.css">
 </head>
-<body>
-    <h1>{{ juegos_indivi.nombre }}</h1>
-    <img src="{{ juegos_indivi.url_imagen }}" alt="{{ juegos_indivi.nombre }}">
-    <p>Género: {{ juegos_indivi.genero }}</p>
-    <p>Lanzamiento: {{ juegos_indivi.lanzamiento }}</p>
-    <a href="{{ juegos_indivi.url_descarga }}">DESCARGAR</a> <hr>
-    <a href="{{ url_for('juegos') }}">Volver a la lista de juegos</a>
+<body class="bg-gray-900 text-white flex items-center justify-center">
+    <div class="w-10/12  bg-gray-800 rounded-lg shadow-lg p-6">
+        <!-- Título del juego -->
+        <h1 class="text-6xl font-bold mb-4 text-start">
+            {{ juegos_indivi.nombre }}
+        </h1>
+        <div class="flex flex-row my-5">
+            <!-- Imagen del juego -->
+            <div class="flex justify-center mr-4">
+                <img class="rounded-lg w-72" src="{{ juegos_indivi.url_imagen }}" alt="{{ juegos_indivi.nombre }}">
+            </div>
+            <div class="flex flex-col">
+                <!-- Información del juego -->
+                <p class="text-lg mb-2">
+                    <span class="font-semibold">Género:</span> {{ juegos_indivi.genero }}
+                </p>
+                <p class="text-lg mb-4">
+                    <span class="font-semibold">Lanzamiento:</span> {{ juegos_indivi.lanzamiento }}
+                </p>
+            </div>
+        </div>
+        <!-- Botón de descarga -->
+        <div class="flex justify-center mb-4">
+            <a href="{{ juegos_indivi.url_descarga }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                DESCARGAR
+            </a>
+        </div>
+        
+        <!-- Separador -->
+        <hr class="border-gray-700 mb-4">
+        
+        <!-- Enlace para volver a la lista de juegos -->
+        <div class="flex justify-center">
+            <a href="{{ url_for('juegos') }}" class="text-blue-400 hover:text-blue-600">
+                Volver a la lista de juegos
+            </a>
+        </div>
+    </div>
 </body>
 </html>
