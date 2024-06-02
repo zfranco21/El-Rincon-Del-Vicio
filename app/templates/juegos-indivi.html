@@ -15,18 +15,13 @@
     <link rel="stylesheet" href="path/to/your/css/styles.css">
 </head>
 <body class="bg-gray-900 text-white flex items-center justify-center">
-    <div class="w-10/12  bg-gray-800 rounded-lg shadow-lg p-6">
-        <!-- Título del juego -->
-        <h1 class="text-6xl font-bold mb-4 text-start">
-            {{ juegos_indivi.nombre }}
-        </h1>
+    <div class="w-10/12 bg-gray-800 rounded-lg shadow-lg p-6">
+        <h1 class="text-6xl font-bold mb-4 text-start">{{ juegos_indivi.nombre }}</h1>
         <div class="flex flex-row my-5">
-            <!-- Imagen del juego -->
             <div class="flex justify-center mr-4">
                 <img class="rounded-lg w-72" src="{{ juegos_indivi.url_imagen }}" alt="{{ juegos_indivi.nombre }}">
             </div>
             <div class="flex flex-col">
-                <!-- Información del juego -->
                 <p class="text-lg mb-2">
                     <span class="font-semibold">Género:</span> {{ juegos_indivi.genero }}
                 </p>
@@ -35,21 +30,32 @@
                 </p>
             </div>
         </div>
-        <!-- Botón de descarga -->
         <div class="flex justify-center mb-4">
-            <a href="{{ juegos_indivi.url_descarga }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                DESCARGAR
-            </a>
+            <a href="{{ juegos_indivi.url_descarga }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">DESCARGAR</a>
         </div>
-        
-        <!-- Separador -->
         <hr class="border-gray-700 mb-4">
-        
-        <!-- Enlace para volver a la lista de juegos -->
         <div class="flex justify-center">
-            <a href="{{ url_for('juegos') }}" class="text-blue-400 hover:text-blue-600">
-                Volver a la lista de juegos
-            </a>
+            <a href="{{ url_for('juegos') }}" class="text-blue-400 hover:text-blue-600">Volver a la lista de juegos</a>
+        </div>
+
+        <!-- Sección de comentarios -->
+        <div class="mt-6">
+            <h2 class="text-4xl font-bold mb-4">Comentarios</h2>
+            {% for comentario in comentarios %}
+                <div class="mb-4 p-4 rounded bg-gray-700">
+                    <p class="text-lg font-semibold">{{ comentario.nombre }} - <span class="text-sm text-gray-400">{{ comentario.fecha_hora }}</span></p>
+                    <p class="mt-2">{{ comentario.texto_comentario }}</p>
+                </div>
+            {% endfor %}
+
+            {% if current_user.is_authenticated %}
+                <form method="POST" class="mt-6">
+                    <textarea name="texto_comentario" class="w-full p-2 rounded mb-4 text-black" placeholder="Escribe tu comentario aquí..."></textarea>
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Enviar comentario</button>
+                </form>
+            {% else %}
+                <p>Por favor, <a href="{{ url_for('login') }}" class="text-blue-400">inicia sesión</a> para comentar.</p>
+            {% endif %}
         </div>
     </div>
 </body>

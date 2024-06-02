@@ -7,6 +7,7 @@ import os
 import MySQLdb.cursors
 import math
 import MySQLdb
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -32,9 +33,8 @@ def index():
 @app.route('/perfil')
 @login_required
 def perfil():
-    # Obtén el ID del usuario actual
     user_id = current_user.id
-    form = SignupForm()  # Crear una instancia del formulario SignupForm
+    form = SignupForm()
     return render_template('perfil.html', user_id=user_id, form=form)
 
 @app.route('/juegos')
@@ -57,17 +57,39 @@ def juegos():
 
     return render_template('juegos.html', products=products, page=page, total_pages=total_pages)
 
-@app.route('/juegos-indivi/<int:juegos_indivi_id>')
+@app.route('/juegos-indivi/<int:juegos_indivi_id>', methods=['GET', 'POST'])
 def juegos_indivi(juegos_indivi_id):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT id_juego, nombre, url_imagen, genero, lanzamiento, url_descarga FROM Juegos WHERE id_juego = %s', (juegos_indivi_id,))
     juegos_indivi = cursor.fetchone()
     cursor.close()
-    if juegos_indivi:
-        return render_template('juegos-indivi.html', juegos_indivi=juegos_indivi)
-    else:
-        return "Juego no encontrado", 404
     
+    if not juegos_indivi:
+        return "Juego no encontrado", 404
+
+    if request.method == 'POST':
+        if not current_user.is_authenticated:
+            flash('Por favor, inicia sesión para comentar.')
+            return redirect(url_for('login'))
+        
+        texto_comentario = request.form['texto_comentario']
+        fecha_hora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        id_usuario = current_user.id
+
+        cursor = mysql.connection.cursor()
+        cursor.execute('INSERT INTO Comentarios (id_usuario, id_juego, texto_comentario, fecha_hora) VALUES (%s, %s, %s, %s)', 
+                       (id_usuario, juegos_indivi_id, texto_comentario, fecha_hora))
+        mysql.connection.commit()
+        cursor.close()
+
+        flash('Comentario agregado!')
+
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT c.id_comentario, c.texto_comentario, c.fecha_hora, u.nombre FROM Comentarios c JOIN Usuarios u ON c.id_usuario = u.id_usuario WHERE c.id_juego = %s ORDER BY c.fecha_hora DESC', (juegos_indivi_id,))
+    comentarios = cursor.fetchall()
+    cursor.close()
+
+    return render_template('juegos-indivi.html', juegos_indivi=juegos_indivi, comentarios=comentarios)
 
 @app.route('/noticias')
 def noticias():
@@ -86,7 +108,6 @@ def show_signup_form():
         name = form.name.data
         email = form.email.data
         password = form.password.data
-        # Verificar si ya existe un usuario con el mismo correo electrónico
         cur = mysql.connection.cursor()
         cur.execute("SELECT id_usuario FROM Usuarios WHERE correo_electronico = %s", (email,))
         existing_user = cur.fetchone()
@@ -95,16 +116,12 @@ def show_signup_form():
             flash('Ya existe una cuenta con este correo electrónico. Por favor, inicia sesión.', 'error')
             return redirect(url_for('login'))
         else:
-            # Si no existe, proceder con la inserción del nuevo usuario
             cur = mysql.connection.cursor()
             cur.execute("INSERT INTO Usuarios (nombre, correo_electronico, contrasena_hash) VALUES (%s, %s, %s)", (name, email, password))
             mysql.connection.commit()
-            # Obtener el ID del nuevo usuario insertado
             user_id = cur.lastrowid
             cur.close()
-            # Crear una instancia de User con el ID insertado
             user = User(user_id, name, email, password)
-            # Dejar al usuario logueado
             login_user(user, remember=True)
             return redirect(url_for('index'))
     return render_template('signup_form.html', form=form)
@@ -117,13 +134,11 @@ def login():
     if form.validate_on_submit():
         email = form.email.data
         password = form.password.data
-        # Consulta SQL para obtener el usuario por su correo electrónico
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM Usuarios WHERE correo_electronico = %s", (email,))
         user_data = cur.fetchone()
         cur.close()
         if user_data and user_data['contrasena_hash'] == password:
-            # esto crea una instancia de User con los datos recuperados de la base de datos, sirve para el logueo de una cuenta ya creada
             user = User(user_data['id_usuario'], user_data['nombre'], user_data['correo_electronico'], user_data['contrasena_hash'])
             login_user(user, remember=form.remember_me.data)
             return redirect(url_for('index'))
@@ -131,7 +146,6 @@ def login():
 
 @login_manager.user_loader
 def load_user(user_id):
-    # Consulta SQL para obtener el usuario por su ID
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM Usuarios WHERE id_usuario = %s", (user_id,))
     user_data = cur.fetchone()
@@ -142,23 +156,13 @@ def load_user(user_id):
 
 @app.route('/logout')
 def logout():
-    logout_user() 
+    logout_user()
     return redirect(url_for('index'))
-
-UPLOAD_FOLDER = 'static/profile_pictures'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 @app.route('/eliminar_usuario/<int:user_id>', methods=['POST'])
 @login_required
 def eliminar_usuario(user_id):
     if current_user.is_admin or current_user.id == user_id:
-        # esto ayuda a eliminar el usuario de la base de datos
         with mysql.connection.cursor() as cur:
             cur.execute("DELETE FROM Usuarios WHERE id_usuario = %s", (user_id,))
             mysql.connection.commit()
