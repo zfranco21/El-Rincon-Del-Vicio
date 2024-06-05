@@ -14,7 +14,7 @@
 
     <title>ERDV | Juegos</title>
 </head>
-<body class="text-white fondo">
+<body class="text-white bg-gray-900">
     <!--Header: Necesitamos terminar de codear las demas paginas y también Crear el formulario Login/Register para el boton "Acceder" del header-->
     <header class="bg-[#222831]">
         <nav class="tablet:flex pc:flex tv:flex items-center justify-between pc:mx-20 pc:py-4 tablet:mx-20 tablet:py-4 tv:mx-20 tv:py-1 celu:mx-4 celu:py-4">
@@ -77,15 +77,14 @@
                 <div class="flex justify-center">
                     <div class="grid grid-cols-3 celu:grid-cols-1 gap-4 w-1/2">
                         {% for product in products %}
-                            <div class="bg-white p-4 shadow-md content-center">
-                                
+                           <div class="bg-white p-4 shadow-md content-center">
                                 <h2 class="text-xl font-semibold mb-2">{{ product.nombre }}</h2>
                                 <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}"><img src="{{ product.url_imagen }}" alt="{{ product.nombre }}" class="w-full mb-1">/a>
                                 <h1 class="text-2sm font-bold text-black">{{ product.nombre }}</h1>
                                 <p class="text-sm text-gray-600">Género: {{ product.genero }}</p>
                                 <p class="text-sm text-gray-600">Lanzamiento: {{ product.lanzamiento }}</p>
                                 <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}" class="text-blue-500 mt-2 block">Ver más</a>
-                            </div>
+                            </div>                         
                         {% endfor %}
                     </div>
                 </div>
@@ -109,9 +108,14 @@
             </div>
             <!--ANUNCIOS-->
             <div class="flex flex-row w-auto">
-            <img src="" alt="">
+                <div>
+                    <img id="ad-image" src="/app/static/img/publi/euroTruck.jpg" alt="">
+                </div>
+            <div>
+                <img id="ad-image" src="/app/static/img/publi/lolMobile.jpg" alt="" srcset="">
             </div>
-        </div>   
+            </div>  
+        </div>
     </main>
     <!--PIE DE PAGINA-->
     <footer class="bg-[#222831] px-2 celu:text-xs text-center">
