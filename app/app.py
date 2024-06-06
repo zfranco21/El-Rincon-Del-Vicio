@@ -151,7 +151,12 @@ def load_user(user_id):
     user_data = cur.fetchone()
     cur.close()
     if user_data:
-        return User(user_data['id_usuario'], user_data['nombre'], user_data['correo_electronico'], user_data['contrasena_hash'])
+        # Obtener el valor de is_admin de la base de datos
+        
+        is_admin = user_data['is_admin']
+        
+        # Crear una instancia de User con el valor is_admin
+        return User(user_data['id_usuario'], user_data['nombre'], user_data['correo_electronico'], user_data['contrasena_hash'], is_admin)
     return None
 
 @app.route('/logout')
@@ -171,6 +176,27 @@ def eliminar_usuario(user_id):
     else:
         abort(403)
 
+@app.route('/subir_juego', methods=['POST'])
+@login_required
+def subir_juego():
+    if not current_user.is_admin:
+        flash('No tienes permisos para realizar esta acción.', 'error')
+        return redirect(url_for('perfil'))
+    
+    nombre = request.form['nombre']
+    descripcion = request.form['descripcion']
+    url_descarga = request.form['url_descarga']
+    genero = request.form['genero']
+    lanzamiento = request.form['lanzamiento']
+
+    cursor = mysql.connection.cursor()
+    cursor.execute('INSERT INTO Juegos (nombre, descripcion, url_descarga, genero, lanzamiento) VALUES (%s, %s, %s, %s, %s)', 
+                   (nombre, descripcion, url_descarga, genero, lanzamiento))
+    mysql.connection.commit()
+    cursor.close()
+
+    flash('Juego subido con éxito!', 'success')
+    return redirect(url_for('perfil'))
 
 if __name__ == '__main__':
     app.secret_key = 'supersecretkey'

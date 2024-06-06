@@ -43,10 +43,10 @@
     </header>
 
     <main class="mt-20 text-center">
-        <div class="">
+        <div>
             <h1 class="text-2xl mb-10 font-bold text-black">Bienvenido a tu perfil, <span class="text-orange-500">{{ current_user.name }}</span></h1>
             
-            <div class="bg-slate-800 bg-opacity-30 mx-80">
+            <div class="bg-slate-800 bg-opacity-30 mx-80 celu:mx-10 tablet:mx-40">
                 <h2 class="text-xl font-bold mb-10 pt-10">Información de Usuario:</h2>
                 <div class="mt-10">
                     
@@ -69,9 +69,52 @@
                 </div>  
             </div>
           
-        </div>
+        </div>    
     </main>
 
+    <section>
+        {% if current_user.is_admin %}
+        <div class="mt-10 mb-10 flex justify-center items-center">        
+            <div class="bg-opacity-50 flex justify-center items-center">
+                <div class="bg-gray-500 rounded-2xl shadow-xl px-40">
+                    <div class="p-8">
+                        <form action="{{ url_for('subir_juego') }}" method="POST">
+                            <h2 class="text-2xl text-white font-bold text-center mb-16"><u>Agregar Juegos</u></h2>
+                            <div class="mb-6">
+                                <label for="nombre" class="block text-sm font-medium text-white mb-2">Nombre del Juego</label>
+                                <input type="text" class="input px-10 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 text-black" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="url_imagen" class="block text-sm font-medium  text-white mb-2">URL Imagen</label>
+                                <input type="url" class="input px-10 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300  text-black" id="url_imagen" name="url_imagen" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="descripcion" class="block text-sm font-medium  text-white mb-2">Descripción</label>
+                                <textarea class="input px-10 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 resize-none  text-black" id="descripcion" name="descripcion" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label for="url_descarga" class="block text-sm font-medium  text-white mb-2">URL de Descarga</label>
+                                <input type="url" class="input px-10 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300  text-black" id="url_descarga" name="url_descarga" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="genero" class="block text-sm font-medium text-white mb-2">Género</label>
+                                <input type="text" class="input px-10 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300  text-black" id="genero" name="genero" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="lanzamiento" class="block text-sm font-medium text-white mb-2">Fecha de Lanzamiento</label>
+                                <input type="date" class="input px-16 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300  text-black" id="lanzamiento" name="lanzamiento" required>
+                            </div>
+                            <div class="flex justify-center">
+                                <button class="hover:bg-orange-500 p-2 border bg-slate-800 rounded-lg px-10 py-2" type="submit" >Subir Juego</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+    
     <script>
         // esto oculta el botón de registro si el usuario está autenticado
         var authenticated = document.getElementById('authenticated').getAttribute('data-authenticated');
