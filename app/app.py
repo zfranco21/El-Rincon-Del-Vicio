@@ -162,11 +162,10 @@ def load_user(user_id):
     user_data = cur.fetchone()
     cur.close()
     if user_data:
-        # Obtener el valor de is_admin de la base de datos
+        # Obtiene el valor de is_admin de la base de datos
         
         is_admin = user_data['is_admin']
         
-        # Crear una instancia de User con el valor is_admin
         return User(user_data['id_usuario'], user_data['nombre'], user_data['correo_electronico'], user_data['contrasena_hash'], is_admin)
     return None
 
