@@ -91,6 +91,17 @@ def juegos_indivi(juegos_indivi_id):
 
     return render_template('juegos-indivi.html', juegos_indivi=juegos_indivi, comentarios=comentarios)
 
+@app.route('/filtrar_juegos', methods=['GET'])
+def filtrar_juegos():
+    genero = request.args.get('genero')
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT id_juego, nombre, url_imagen, genero, lanzamiento FROM Juegos WHERE genero = %s', (genero,))
+    products = cursor.fetchall()
+    cursor.close()
+    
+    return render_template('juegos_filtrados.html', products=products)
+
+
 @app.route('/noticias')
 def noticias():
     return render_template('noticias.html')

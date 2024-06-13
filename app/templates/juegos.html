@@ -63,63 +63,74 @@
 
         <!--CATALOGO-->
 
-        <div class="flex flex-wrap items-center justify-center m-5 w-4/5">
-            <button type="button" id="filtro-aventura"  class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">adventure
-
-            </button>
-            <button type="button" id="filtro-accion" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Acción</button>
-            <button type="button" id="filtro-terror" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">terror</button>
-            <button type="button" id="filtro-estrategia" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Estrategia</button>
-            <button type="button" id="filtro-casual" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Casual</button>
+        <div class="flex flex-wrap items-center justify-center m-5 w-3/5 mb-20">
+            <a href="{{ url_for('juegos') }}"><button type="button" id="filtro-casual" onclick="filtrarJuegos('casual')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70"><img class="w-6 h-auto" src="{{ url_for('static', filename='img/juegos/home-svgrepo-com.svg') }}" alt="" srcset=""></button></a>
+            <button type="button" id="filtro-aventura" onclick="filtrarJuegos('action')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">action</button>
+            <button type="button" id="filtro-accion" onclick="filtrarJuegos('racing')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">racing</button>
+            <button type="button" id="filtro-terror" onclick="filtrarJuegos('fighting')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">fighting</button>
+            <button type="button" id="filtro-estrategia" onclick="filtrarJuegos('survival')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">survival</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('rpg')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">rpg</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('shooter')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">shooter</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('deporte')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">deporte</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('boxing')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">boxing</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('adventure')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">dventure</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('puzzle')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">puzzle</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('Shoot´em up')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Shoot´em up</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('soccer')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">soccer</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('strategy')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">strategy</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('combat')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">combat</button>
+            <button type="button" id="filtro-casual" onclick="filtrarJuegos('sports')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">sports</button>
         </div>
 
             <!--Lista de juegos-->
-        <div class="flex flex-row">   
-            <div class="flex flex-col w-3/4">
-                <div class="flex justify-center">
-                        <div class="grid grid-cols-3 celu:grid-cols-1 gap-1">
-                            {% for product in products %}
-                                <div class="flex flex-col shadow-md items-start justify-center p-2 rounded-md">
-                                    <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}">
-                                        <img src="{{ product.url_imagen }}" alt="{{ product.nombre }}" class="w-52 h-52 mb-1 rounded-md">
-                                    </a>
-                                    <h2 class="text-xl font-semibold mb-2 text-white py-2">{{ product.nombre }}</h2>
-                                    <h1 class="text-sm font-bold text-white">{{ product.nombre }}</h1>
-                                    <p class="text-sm text-white">Género: {{ product.genero }}</p>
-                                    <p class="text-sm text-white">Lanzamiento: {{ product.lanzamiento }}</p>
-                                    <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}" class="text-blue-500 mt-2 block">Ver más</a>
-                                </div>                
-                             {% endfor %}
+            <div id="lista-juegos">
+                <div class="flex flex-row">   
+                    <div class="flex flex-col w-3/4">
+                        <div class="flex justify-center">
+                            <div class="grid grid-cols-3 celu:grid-cols-1 gap-1">
+                                {% for product in products %}
+                                    <div class="flex flex-col shadow-md items-start justify-center p-2 rounded-md">
+                                        <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}">
+                                            <img src="{{ product.url_imagen }}" alt="{{ product.nombre }}" class="w-52 h-52 mb-1 rounded-md">
+                                        </a>
+                                        <h2 class="text-xl font-semibold mb-2 text-white py-2">{{ product.nombre }}</h2>
+                                        <h1 class="text-sm font-bold text-white">{{ product.nombre }}</h1>
+                                        <p class="text-sm text-white">Género: {{ product.genero }}</p>
+                                        <p class="text-sm text-white">Lanzamiento: {{ product.lanzamiento }}</p>
+                                        <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}" class="text-blue-500 mt-2 block">Ver más</a>
+                                    </div>                
+                                {% endfor %}
+                            </div>
                         </div>
-                </div>
-
-                <!--PASADOR DE PAGINAS-->
-                <div class="mt-8 flex justify-center space-x-3">
-                    {% if page > 1 %}
-                        <a href="{{ url_for('juegos', page=page-1) }}" class="text-blue-500">Anterior</a>
-                    {% endif %}
-                    {% for p in range(1, total_pages + 1) %}
-                        {% if p == page %}
-                            <span class="text-blue-500 font-semibold">{{ p }}</span>
-                        {% else %}
-                            <a href="{{ url_for('juegos', page=p) }}" class="text-blue-500">{{ p }}</a>
-                        {% endif %}
-                    {% endfor %}
-                    {% if page < total_pages %}
-                        <a href="{{ url_for('juegos', page=page+1) }}" class="text-blue-500">Siguiente</a>
-                    {% endif %}
+                        <!--PASADOR DE PAGINAS-->
+                        <div class="mt-8 flex justify-center space-x-3">
+                            {% if page > 1 %}
+                                <a href="{{ url_for('juegos', page=page-1) }}" class="text-blue-500">Anterior</a>
+                            {% endif %}
+                            {% for p in range(1, total_pages + 1) %}
+                                {% if p == page %}
+                                    <span class="text-blue-500 font-semibold">{{ p }}</span>
+                                {% else %}
+                                    <a href="{{ url_for('juegos', page=p) }}" class="text-blue-500">{{ p }}</a>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page < total_pages %}
+                                <a href="{{ url_for('juegos', page=page+1) }}" class="text-blue-500">Siguiente</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!--ANUNCIOS-->
+                    <div class="flex flex-col  w-1/4 justify-items-center">
+                        <div class="p-3">
+                            <img class="w-4/5" id="ad-image" src="" alt="">
+                        </div>
+                        <div class="p-3">
+                            <img class="w-4/5" id="ad-image1" src="" alt="" srcset="">
+                        </div>
+                    </div>  
                 </div>
             </div>
-            <!--ANUNCIOS-->
-            <div class="flex flex-col  w-1/4 justify-items-center">
-                <div class="p-3">
-                    <img class="w-4/5" id="ad-image" src="" alt="">
-                </div>
-                <div class="p-3">
-                    <img class="w-4/5" id="ad-image1" src="" alt="" srcset="">
-                </div>
-            </div>  
-        </div>
+            
     </main>
     <!--PIE DE PAGINA-->
     <footer class="bg-[#222831] px-2 celu:text-xs text-center">

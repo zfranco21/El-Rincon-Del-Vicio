@@ -1,0 +1,21 @@
+ <!--Lista de juegos-->
+
+    <div class="flex flex-row">   
+        <div class="flex flex-col w-3/4">
+            <div class="flex justify-center">
+                <div class="grid grid-cols-3 celu:grid-cols-1 gap-1">
+                    {% for product in products %}
+                        <div class="flex flex-col shadow-md items-start justify-center p-2 rounded-md">
+                            <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}">
+                                <img src="{{ product.url_imagen }}" alt="{{ product.nombre }}" class="w-52 h-52 mb-1 rounded-md">
+                            </a>
+                            <h2 class="text-xl font-semibold mb-2 text-white py-2">{{ product.nombre }}</h2>
+                            <h1 class="text-sm font-bold text-white">{{ product.nombre }}</h1>
+                            <p class="text-sm text-white">Género: {{ product.genero }}</p>
+                            <p class="text-sm text-white">Lanzamiento: {{ product.lanzamiento }}</p>
+                            <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}" class="text-blue-500 mt-2 block">Ver más</a>
+                        </div>                
+                    {% endfor %}
+                </div>
+            </div>
+           
