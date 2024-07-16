@@ -75,7 +75,6 @@
             <button type="button" id="filtro-casual" onclick="filtrarJuegos('boxing')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">boxing</button>
             <button type="button" id="filtro-casual" onclick="filtrarJuegos('adventure')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">dventure</button>
             <button type="button" id="filtro-casual" onclick="filtrarJuegos('puzzle')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">puzzle</button>
-            <button type="button" id="filtro-casual" onclick="filtrarJuegos('Shoot´em up')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">Shoot´em up</button>
             <button type="button" id="filtro-casual" onclick="filtrarJuegos('soccer')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">soccer</button>
             <button type="button" id="filtro-casual" onclick="filtrarJuegos('strategy')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">strategy</button>
             <button type="button" id="filtro-casual" onclick="filtrarJuegos('combat')" class="m-1 bg-slate-800 bg-opacity-30 p-3 rounded-xl hover:bg-opacity-70">combat</button>
@@ -85,7 +84,7 @@
             <!--Lista de juegos-->
             <div id="lista-juegos">
                 <div class="flex flex-row">   
-                    <div class="flex flex-col w-3/4">
+                    <div class="flex flex-col w-100">
                         <div class="flex justify-center">
                             <div class="grid grid-cols-3 celu:grid-cols-1 gap-1">
                                 {% for product in products %}
@@ -94,7 +93,6 @@
                                             <img src="{{ product.url_imagen }}" alt="{{ product.nombre }}" class="w-52 h-52 mb-1 rounded-md">
                                         </a>
                                         <h2 class="text-xl font-semibold mb-2 text-white py-2">{{ product.nombre }}</h2>
-                                        <h1 class="text-sm font-bold text-white">{{ product.nombre }}</h1>
                                         <p class="text-sm text-white">Género: {{ product.genero }}</p>
                                         <p class="text-sm text-white">Lanzamiento: {{ product.lanzamiento }}</p>
                                         <a href="{{ url_for('juegos_indivi', juegos_indivi_id=product.id_juego) }}" class="text-blue-500 mt-2 block">Ver más</a>
@@ -102,35 +100,25 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        <!--PASADOR DE PAGINAS-->
-                        <div class="mt-8 flex justify-center space-x-3">
-                            {% if page > 1 %}
-                                <a href="{{ url_for('juegos', page=page-1) }}" class="text-blue-500">Anterior</a>
-                            {% endif %}
-                            {% for p in range(1, total_pages + 1) %}
-                                {% if p == page %}
-                                    <span class="text-blue-500 font-semibold">{{ p }}</span>
-                                {% else %}
-                                    <a href="{{ url_for('juegos', page=p) }}" class="text-blue-500">{{ p }}</a>
-                                {% endif %}
-                            {% endfor %}
-                            {% if page < total_pages %}
-                                <a href="{{ url_for('juegos', page=page+1) }}" class="text-blue-500">Siguiente</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <!--ANUNCIOS-->
-                    <div class="flex flex-col  w-1/4 justify-items-center">
-                        <div class="p-3">
-                            <img class="w-4/5" id="ad-image" src="" alt="">
-                        </div>
-                        <div class="p-3">
-                            <img class="w-4/5" id="ad-image1" src="" alt="" srcset="">
-                        </div>
-                    </div>  
                 </div>
             </div>
-            
+                    <!--PASADOR DE PAGINAS-->
+            <div class="mt-8 flex justify-center space-x-3">
+                {% if page > 1 %}
+                    <a href="{{ url_for('juegos', page=page-1) }}" class="text-blue-500">Anterior</a>
+                {% endif %}
+                {% for p in range(1, total_pages + 1) %}
+                    {% if p == page %}
+                         <span class="text-blue-500 font-semibold">{{ p }}</span>
+                    {% else %}
+                        <a href="{{ url_for('juegos', page=p) }}" class="text-blue-500">{{ p }}</a>
+                    {% endif %}
+                    {% endfor %}
+                    {% if page < total_pages %}
+                        <a href="{{ url_for('juegos', page=page+1) }}" class="text-blue-500">Siguiente</a>
+                        {% endif %}
+             </div>
+        </div>            
     </main>
     <!--PIE DE PAGINA-->
     <footer class="bg-[#222831] px-2 celu:text-xs text-center">

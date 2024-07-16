@@ -6,16 +6,15 @@ from models import User
 import os
 import MySQLdb.cursors
 import math
-import MySQLdb
 from datetime import datetime
 
 app = Flask(__name__)
 
 # Configuración de la base de datos MySQL en Railway
-app.config['MYSQL_HOST'] = 'roundhouse.proxy.rlwy.net' 
-app.config['MYSQL_PORT'] = 16543 
+app.config['MYSQL_HOST'] = 'monorail.proxy.rlwy.net'
+app.config['MYSQL_PORT'] = 59963
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'aBhEAcCIorqmrzymnSjidmAuPxZQYEKf'
+app.config['MYSQL_PASSWORD'] = 'LZDxAybpKOralbJsehIgVKxJyPLmYsXl'
 app.config['MYSQL_DB'] = 'railway'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 app.config['SECRET_KEY'] = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b23a5d1616bf319bc298105da20fe'
@@ -101,7 +100,6 @@ def filtrar_juegos():
     
     return render_template('juegos_filtrados.html', products=products)
 
-
 @app.route('/noticias')
 def noticias():
     return render_template('noticias.html')
@@ -163,9 +161,7 @@ def load_user(user_id):
     cur.close()
     if user_data:
         # Obtiene el valor de is_admin de la base de datos
-        
         is_admin = user_data['is_admin']
-        
         return User(user_data['id_usuario'], user_data['nombre'], user_data['correo_electronico'], user_data['contrasena_hash'], is_admin)
     return None
 

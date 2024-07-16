@@ -1,11 +1,13 @@
---Tabla de usuarios con sus atributos
+-- Tabla de usuarios con sus atributos
 CREATE TABLE Usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     correo_electronico VARCHAR(255) NOT NULL,
     contrasena_hash VARCHAR(255) NOT NULL,
+    is_admin BOOLEAN DEFAULT FALSE
 );    
---Tabla de juegos con sus atributos
+
+-- Tabla de juegos con sus atributos
 CREATE TABLE Juegos (
     id_juego INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
@@ -16,7 +18,7 @@ CREATE TABLE Juegos (
     lanzamiento DATETIME NOT NULL
 );
 
---Tabla de calificaciones con sus atributos
+-- Tabla de calificaciones con sus atributos
 CREATE TABLE Calificaciones (
     id_calificacion INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT,
@@ -26,7 +28,7 @@ CREATE TABLE Calificaciones (
     FOREIGN KEY (id_juego) REFERENCES Juegos(id_juego)
 );
 
---Tabla de comentarios con sus atributos
+-- Tabla de comentarios con sus atributos
 CREATE TABLE Comentarios (
     id_comentario INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT,

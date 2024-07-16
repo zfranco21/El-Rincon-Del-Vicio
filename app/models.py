@@ -37,7 +37,5 @@ class Comentario:
         self.usuario = usuario
         self.juego = juego
 
-    def __init__(self, id_usuario, id_juego, texto_comentario):
-        self.id_usuario = id_usuario
-        self.id_juego = id_juego
-        self.texto_comentario = texto_comentario
+    def __repr__(self):
+        return '<Comentario {}>'.format(self.texto_comentario)
