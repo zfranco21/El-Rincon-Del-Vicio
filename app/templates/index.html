@@ -42,11 +42,11 @@
         </nav>
     </header>
 
-    <!-- Main content -->
+    <!-- Contenido principal -->
     <main>
         <!-- Carousel -->
         <div id="carouselExampleIndicators" class="carousel slide position-relative">
-            <!-- Carousel Indicators -->
+            <!-- Carousel Indicatores -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -54,47 +54,36 @@
             </div>
             <!-- Carousel Items -->
             <div class="carousel-inner">
-                <!-- Item 1 -->
+                <!-- juego 1 -->
                 <div class="carousel-item">
-                    <!-- Image -->
                     <img src="https://i.pinimg.com/originals/25/ff/0f/25ff0f75103340b192760e9b83f35ed5.jpg" class="d-block imgInicio" alt="Mega Man 8">
-                    <!-- Content -->
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Mega Man 8-</h2>
-                        <!-- Video -->
                         <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
-                        <!-- Link to video -->
                         <a href="https://youtu.be/E7PAKtjLeQo?si=_ihDC4SKvH3sfGKm" target="_blank"><img class="border-2 juegoInicio" src="https://i.ytimg.com/vi/iSkXAnhu1Q0/maxresdefault.jpg" alt="Mega Man 8"></a>
                     </div>
                 </div>
-                <!-- Item 2 -->
+
+                <!-- juego 2 -->
                 <div class="carousel-item">
-                    <!-- Image -->
                     <img src="https://wallpapers.com/images/hd/gray-fox-metal-gear-solid-4v13n7fybx0uzlda.jpg" class="d-block imgInicio" alt="Metal Gear Solid">
-                    <!-- Content -->
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Metal Gear Solid-</h2>
-                        <!-- Video -->
                         <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
-                        <!-- Link to video -->
                         <a href="https://www.youtube.com/watch?v=UZNOI3VTWBk&ab_channel=zapidante" target="_blank"><img class="border-2 juegoInicio" src="https://i0.wp.com/www.pcmrace.com/wp-content/uploads/2017/07/metal-gear-solid-capa.jpg" alt="Metal Gear Solid"></a>
                     </div>
                 </div>
-                <!-- Item 3 -->
+                <!-- juego 3 -->
                 <div class="carousel-item active">
-                    <!-- Image -->
                     <img src="{{ url_for('static', filename='img/crash.jpg') }}" class="d-block imgInicio" alt="Crash Bandicoot">
-                    <!-- Content -->
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <h2 class="fuente1 text-center bg-orange-500 celu:text-sm">-Crash Bandicoot 3-</h2>
-                        <!-- Video -->
                         <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="position-absolute top-50 start-50 translate-middle cursor-pointer celu:hidden w-12" src="{{ url_for('static', filename='img/youtube.svg') }}" alt="playVideo"></a>
-                        <!-- Link to video -->
                         <a href="https://youtu.be/DGBwXH5P218?si=C-PHMj7Zt2Cghv_R" target="_blank"><img class="border-2 juegoInicio" src="https://i.ytimg.com/vi/DGBwXH5P218/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlEag6ZyFMgMBxiPK9BwTvsgYuCw" alt="Crash Bandicoot 3"></a>
                     </div>
                 </div>
             </div>
-            <!-- Carousel Controls -->
+            <!-- Carousel Controladores < y > -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <img src="{{ url_for('static', filename='img/previousIcon.png') }}" alt="Previous" width="50" height="50">
                 <span class="visually-hidden">Previous</span>
@@ -103,12 +92,12 @@
                 <img src="{{ url_for('static', filename='img/nextIcon.png') }}" alt="Next" width="50" height="50">
                 <span class="visually-hidden">Next</span>
             </button>          
-            <!-- Button to download games -->
+            <!-- Boton de descarga -->
             <div class="position-absolute bottom-10 start-50 translate-middle">
                 <a href="{{ url_for('juegos') }}" class="btn btn-primary celu:invisible">Descargá Tus Juegos</a>
             </div>
         </div>
-        <!-- Button to download games (mobile) -->
+        <!-- Boton de descarga en mobile -->
         <div class="flex justify-center">
             <a href="{{ url_for('juegos') }}" class="bg-black w-full pc:hidden tv:hidden tablet:hidden p-4 text-center text-white">Descargá Tu Juegos</a>
         </div>

@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, abort, flash
 from flask_login import current_user, login_user, logout_user, LoginManager, login_required
 from flask_mysqldb import MySQL
-from forms import SignupForm, LoginForm
-from models import User
 import os
 import MySQLdb.cursors
 import math
 from datetime import datetime
+from forms import SignupForm, LoginForm
+from models import User
 
 app = Flask(__name__)
 
@@ -25,6 +25,7 @@ mysql = MySQL(app)
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
 
+# Rutas de la aplicación
 @app.route('/')
 def index():
     return render_template('index.html')
