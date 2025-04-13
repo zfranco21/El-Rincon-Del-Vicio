@@ -14,10 +14,10 @@ y nuestra web no esta alojada en ningun hosting.
 
 ## Tecnologías Utilizadas
 
-- **Frontend:** HTML, JavaScript, Tailwind CSS
-- **Backend:** Firebase (para la autenticación de usuarios y formularios)
-- **Base de Datos:** MySQL
-- **Control de Versiones:** GitHub
+- **Frontend:** HTML, Tailwind CSS y JavaScript
+- **Backend:** Python y Flask
+- **Base de Datos:** MySQL Workbench
+- **Control de Versiones:** Git y Github
 - **Diseño y Maquetado:** Figma
 
 ## Contribuir (pronto)
